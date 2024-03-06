@@ -172,12 +172,12 @@ if command -v ngrok &>/dev/null; then
 fi
 
 # flutter
-export PATH=$HOME/development/flutter/bin:$PATH
+export PATH=$HOME/SDK/flutter/bin:$PATH
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/Users/sondo/.micromamba/bin/micromamba'
-export MAMBA_ROOT_PREFIX='/Users/sondo/development/micromamba'
+export MAMBA_EXE='$HOME/.micromamba/bin/micromamba'
+export MAMBA_ROOT_PREFIX='$HOME/SDK/micromamba'
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__mamba_setup"
@@ -189,14 +189,14 @@ unset __mamba_setup
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/sondo/micromamba/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+__conda_setup="$('$HOME/micromamba/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__conda_setup"
 else
-	if [ -f "/Users/sondo/development/micromamba/etc/profile.d/conda.sh" ]; then
-		. "/Users/sondo/development/micromamba/etc/profile.d/conda.sh"
+	if [ -f "$HOME/SDK/micromamba/etc/profile.d/conda.sh" ]; then
+		. "$HOME/SDK/micromamba/etc/profile.d/conda.sh"
 	else
-		export PATH="/Users/sondo/development/micromamba/bin:$PATH"
+		export PATH="$HOME/SDK/micromamba/bin:$PATH"
 	fi
 fi
 unset __conda_setup

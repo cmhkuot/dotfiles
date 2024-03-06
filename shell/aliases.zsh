@@ -9,6 +9,7 @@
 
 # Shortcuts
 alias o="open ."
+alias zshedit="code ~/.dotfiles/shell/.zshrc"
 alias reloadshell="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
