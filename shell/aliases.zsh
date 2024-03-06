@@ -1,38 +1,62 @@
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 # Shortcuts
-alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
-alias reloadshell="source $HOME/.zshrc"
+alias o="open ."
+alias reloadshell="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+
+# * lists everything with directories first
+alias ll="eza -al --group-directories-first"
+# * lists only directories (no files)
+alias ld="eza -lD"
+# * lists only files (no directories)
+alias lf="eza -lF --color=always | grep -v /"
+# * lists only hidden files (no directories)
+alias lh="eza -dl .* --group-directories-first"
+# * lists only files sorted by size
+alias ls="eza -alF --color=always --sort=size | grep -v /"
+# * lists everything sorted by time updated
+alias lt="eza -al --sort=modified"
+
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias compile="commit 'compile'"
 alias version="commit 'version'"
+alias sshconfig="code ~/.ssh/config"
+alias hostfile="sudo vi /etc/hosts"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias projects="cd $HOME/Code"
-alias sites="cd $HOME/Herd"
+
+# IP addresses
+alias ip="curl ipconfig.pw/json"
+alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Laravel
-alias a="php artisan"
-alias fresh="php artisan migrate:fresh --seed"
-alias tinker="php artisan tinker"
-alias seed="php artisan db:seed"
-alias serve="php artisan serve"
+# alias a="php artisan"
+# alias fresh="php artisan migrate:fresh --seed"
+# alias tinker="php artisan tinker"
+# alias seed="php artisan db:seed"
+# alias serve="php artisan serve"
 
 # PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
+# alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run watch"
+alias yfresh="rm -rf node_modules/ package-lock.json && yarn install"
+# alias watch="npm run watch"
 
 # Docker
-alias docker-composer="docker-compose"
-
-# SQL Server
-alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
+# alias docker-composer="docker-compose"
 
 # Git
 alias gst="git status"
@@ -51,3 +75,25 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Redis
+# alias flush-redis="redis-cli FLUSHALL"
+
+# Lock the screen
+alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# run `htop` with root rights
+alias shtop='sudo htop'
+
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias brewbackup="brew bundle dump -f"
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
+alias gatekeeper="$DOTFILES/helpers/gatekeeper.sh"

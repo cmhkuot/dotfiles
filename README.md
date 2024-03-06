@@ -1,28 +1,22 @@
-# README
+# My personal dotfiles
 
-## My .dotfiles
+My personal dotfiles.
+It contains the installation of some basic tools, some handy aliases and functions. Backups of settings are done via [Mackup](https://github.com/lra/mackup).
 
-After backing up your old Mac you may now follow these install instructions to setup a new one.
+You can install them by cloning the repository as `.dotfiles` in your home directory and running the bootstrap script.
 
-1. Update macOS to the latest version through system preferences
-2. [Generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) by running:
+```zsh
+git clone git@github.com:cmhkuot/.dotfiles.git .dotfiles
+cd .dotfiles
+./bootstrap
+```
 
-   ```zsh
-   curl https://raw.githubusercontent.com/cmhkuot/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
-   ```
+The bootstrap script can be run by cd-ing into the `.dotfiles` directory and performing this command:
 
-3. Clone this repo to `~/.dotfiles` with:
+```zsh
+./bootstrap
+```
 
-   ```zsh
-   git clone --recursive git@github.com:cmhkuot/dotfiles.git ~/.dotfiles
-   ```
+Feel free to create an issue on this repo if you have any questions about them.
 
-4. Run the installation with:
-
-   ```zsh
-   cd ~/.dotfiles && ./fresh.sh
-   ```
-
-5. Start `Herd.app` and run its install process
-6. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
-7. Restart your computer to finalize the process
+<!-- ![screenshot](https://cmhkuot.github.io/dotfiles/screenshot.png) -->

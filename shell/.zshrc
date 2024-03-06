@@ -12,6 +12,9 @@ export MNML_INSERT_CHAR="$"
 export MNML_PROMPT=(mnml_git mnml_keymap)
 export MNML_RPROMPT=('mnml_cwd 20')
 
+# Hide username in prompt
+# DEFAULT_USER=$(whoami)
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -33,11 +36,11 @@ ZSH_THEME="minimal"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -78,9 +81,22 @@ ZSH_CUSTOM=$DOTFILES/shell
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+	brew
+	colored-man-pages
+	command-not-found
+	dotenv
+	macos
+	zsh-autosuggestions
+	zsh-nvm
+	zsh-syntax-highlighting
+	zsh-you-should-use
+  aliases
+  yarn-autocompletions
+)
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/.functions
 
 # User configuration
 
@@ -89,6 +105,32 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# And include the parameter for ZSH
+export HISTORY_IGNORE="(ls|cd|cd -|pwd|exit|date|* --help)"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto"
+
+# Homebrew Bundle settings
+export HOMEBREW_BUNDLE_FILE="$DOTFILES/macos/Brewfile"
+export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
+export HOMEBREW_BUNDLE_WHALEBREW_SKIP=true
+export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
+
+# Don’t clear the screen after quitting a manual page
+# export MANPAGER="less -X"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -100,11 +142,62 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+export NVM_SYMLINK_CURRENT=true
+export NODE_OPTIONS="--no-deprecation"
+
+# autoload nvm change version
+autoload -U add-zsh-hook
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#ngrok
+if command -v ngrok &>/dev/null; then
+	eval "$(ngrok completion)"
+fi
+
+# flutter
+export PATH=$HOME/development/flutter/bin:$PATH
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/Users/sondo/.micromamba/bin/micromamba'
+export MAMBA_ROOT_PREFIX='/Users/sondo/development/micromamba'
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
+if [ $? -eq 0 ]; then
+	eval "$__mamba_setup"
+else
+	alias micromamba="$MAMBA_EXE" # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/sondo/micromamba/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+	eval "$__conda_setup"
+else
+	if [ -f "/Users/sondo/development/micromamba/etc/profile.d/conda.sh" ]; then
+		. "/Users/sondo/development/micromamba/etc/profile.d/conda.sh"
+	else
+		export PATH="/Users/sondo/development/micromamba/bin:$PATH"
+	fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
