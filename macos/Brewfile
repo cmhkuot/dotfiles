@@ -43,6 +43,8 @@ brew "mackup"
 brew "mas"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Libraries for security-enabled client and server applications
@@ -100,6 +102,8 @@ cask "fork"
 cask "google-chrome"
 # Utility to hide menu bar items
 cask "hiddenbar"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Menu bar calendar
 cask "itsycal"
 # File archiver
@@ -163,7 +167,6 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "OneDrive", id: 823766827
-mas "Resident Evil 4", id: 6462360082
 mas "Telegram", id: 747648890
 mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
@@ -178,6 +181,9 @@ vscode "anweber.reveal-button"
 vscode "atlassian.atlascode"
 vscode "austinleegordon.vscode-schema-dot-org"
 vscode "brandonkirbyson.vscode-animations"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "catppuccin.catppuccin-vsc-pack"
 vscode "chakrounanas.turbo-console-log"
 vscode "christian-kohler.npm-intellisense"
 vscode "chrmarti.regex"

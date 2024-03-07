@@ -4,6 +4,9 @@ echo "Setting up your Mac..."
 
 DOTFILES=$HOME/.dotfiles
 
+# Hide "last login" line when starting a new terminal session
+touch $HOME/.hushlogin
+
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
@@ -20,6 +23,13 @@ fi
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $DOTFILES/shell/.zshrc $HOME/.zshrc
+
+# Update git config
+git config --global init.defaultBranch main
+git config --global help.autoCorrect prompt
+# git config --global branch.sort -committerdate
+git config --global fetch.prune true
+git config --global log.date iso
 
 # Add global gitignore
 ln -s $DOTFILES/.gitignore.global $HOME/.gitignore.global

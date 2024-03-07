@@ -40,7 +40,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -64,6 +64,9 @@ zstyle ':omz:update' frequency 13
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# If $ZSH_CACHE_DIR is already defined
+ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -126,8 +129,7 @@ export GREP_OPTIONS="--color=auto"
 # Homebrew Bundle settings
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
-export HOMEBREW_BUNDLE_WHALEBREW_SKIP=true
-export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
+export HOMEBREW_BUNDLE_DUMP_DESCRIBE=1
 
 # Don’t clear the screen after quitting a manual page
 # export MANPAGER="less -X"

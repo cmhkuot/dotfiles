@@ -26,9 +26,9 @@ alias ls="eza -alF --color=always --sort=size | grep -v /"
 # * lists everything sorted by time updated
 alias lt="eza -al --sort=modified"
 
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias compile="commit 'compile'"
-alias version="commit 'version'"
+# alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+# alias compile="commit 'compile'"
+# alias version="commit 'version'"
 alias sshconfig="code ~/.ssh/config"
 alias hostfile="sudo vi /etc/hosts"
 
@@ -97,4 +97,4 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias brewbackup="brew bundle dump -f"
 alias python="$(pyenv which python)"
 alias pip="$(pyenv which pip)"
-alias gatekeeper="$DOTFILES/helpers/gatekeeper.sh"
+alias gatekeeper="$DOTFILES/gatekeeper.command"
