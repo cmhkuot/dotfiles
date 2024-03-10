@@ -1,15 +1,19 @@
+# Execute a command silently, discarding all output.
 function silent() {
   "$@" >&/dev/null
 }
 
+# Retrieves the weather forecast for a specified city using the wttr.in service.
+# @param $1 - the city for which to retrieve the weather forecast
+# @returns the weather forecast for the specified city
 function weather() {
   city="$1"
-
   if [ -z "$city" ]; then
-    city="Antwerp"
+    eval "curl http://wttr.in/"
+  else
+    eval "curl http://wttr.in/${city}"
   fi
 
-  eval "curl http://wttr.in/${city}"
 }
 
 function archive() {
@@ -42,21 +46,12 @@ function commit() {
   eval "git commit -a -m '${commitMessage}'"
 }
 
-function load-nvmrc() {
-	local nvmrc_path
-	nvmrc_path="$(nvm_find_nvmrc)"
+function sshcopy() {
+  id="$*"
 
-	if [ -n "$nvmrc_path" ]; then
-		local nvmrc_node_version
-		nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+  if [ "$id" = "" ]; then
+    id="id_ed22519-default"
+  fi
 
-		if [ "$nvmrc_node_version" = "N/A" ]; then
-			nvm install
-		elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-			nvm use
-		fi
-	elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-		echo "Reverting to nvm default version"
-		nvm use default
-	fi
+  pbcopy < ~/.ssh/$id.pub
 }

@@ -12,6 +12,12 @@ export MNML_INSERT_CHAR="$"
 export MNML_PROMPT=(mnml_git mnml_keymap)
 export MNML_RPROMPT=('mnml_cwd 20')
 
+# ZSH-NVM settings
+export NVM_COMPLETION=true
+export NVM_AUTO_USE=true
+export NVM_LAZY_LOAD=true
+# export NVM_NO_USE=true
+
 # Hide username in prompt
 # DEFAULT_USER=$(whoami)
 
@@ -86,20 +92,22 @@ ZSH_CUSTOM=$DOTFILES/shell
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	brew
+	dotenv
+	zsh-nvm
+  aliases
 	colored-man-pages
 	command-not-found
-	dotenv
-	macos
-	zsh-autosuggestions
-	zsh-nvm
-	zsh-syntax-highlighting
 	zsh-you-should-use
-  aliases
+	zsh-autosuggestions
   yarn-autocompletions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/.functions
+
+# Import ssh keys in keychain
+ssh-add -A 2>/dev/null
 
 # User configuration
 
@@ -129,7 +137,7 @@ export GREP_OPTIONS="--color=auto"
 # Homebrew Bundle settings
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
-export HOMEBREW_BUNDLE_DUMP_DESCRIBE=1
+export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
 
 # Don’t clear the screen after quitting a manual page
 # export MANPAGER="less -X"
@@ -157,11 +165,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export NVM_SYMLINK_CURRENT=true
 export NODE_OPTIONS="--no-deprecation"
-
-# autoload nvm change version
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

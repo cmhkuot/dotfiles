@@ -12,6 +12,14 @@ alias o="open ."
 alias zshedit="code ~/.dotfiles/shell/.zshrc"
 alias reloadshell="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew' #To fix brew doctor's warning ""config" scripts exist outside your system or Homebrew directories"
+alias brewbackup="brew bundle dump -f"
+alias brewcleanup="brew cleanup --prune=30"
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
+
+alias gatekeeper="$DOTFILES/bin/gatekeeper.sh" # Gatekeeper hepler
+alias cleanmymac="$DOTFILES/bin/cleanup.sh" # Cleanup caches and temporary files of Mac
 
 # * lists everything with directories first
 alias ll="eza -al --group-directories-first"
@@ -34,8 +42,8 @@ alias hostfile="sudo vi /etc/hosts"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias library="cd $HOME/Library"
 alias projects="cd $HOME/Code"
+alias library="cd $HOME/Library"
 
 # IP addresses
 alias ip="curl ipconfig.pw/json"
@@ -53,7 +61,7 @@ alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias yfresh="rm -rf node_modules/ package-lock.json && yarn install"
+alias yfresh="rm -rf node_modules/ package-lock.json yarn.lock && yarn install"
 # alias watch="npm run watch"
 
 # Docker
@@ -92,9 +100,3 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # run `htop` with root rights
 alias shtop='sudo htop'
-
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias brewbackup="brew bundle dump -f"
-alias python="$(pyenv which python)"
-alias pip="$(pyenv which pip)"
-alias gatekeeper="$DOTFILES/gatekeeper.command"
