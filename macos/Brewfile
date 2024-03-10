@@ -9,8 +9,6 @@ tap "teamookla/speedtest"
 brew "webp"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Platform built on V8 to build network applications
-brew "node"
 # Secure and free password manager for all of your devices
 brew "bitwarden-cli"
 # Powerful, clean, object-oriented scripting language
@@ -29,12 +27,16 @@ brew "docker"
 brew "docker-clean"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
+# AST-based pattern checker for JavaScript
+brew "eslint"
 # Modern, maintained replacement for ls
 brew "eza"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Firebase command-line tools
 brew "firebase-cli"
+# Command-line utility for Gulp
+brew "gulp-cli"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Keep your Mac's application settings in sync
@@ -51,10 +53,18 @@ brew "nginx"
 brew "nss"
 # Manage multiple Node.js versions
 brew "nvm"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
 # Python version management
 brew "pyenv"
-# Library to create, extract, and modify Windows Imaging files
-brew "wimlib"
+# Command-line YAML and XML processor that wraps jq
+brew "python-yq"
+# Static http server anywhere you need one
+brew "serve"
+# Standard Tooling for Vue.js Development
+brew "vue-cli"
 # JavaScript package manager
 brew "yarn"
 # Ookla Speedtest
@@ -90,24 +100,20 @@ cask "font-inter"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 cask "font-lato"
-# Superfamily of fonts for code
-cask "font-monaspace"
-# Quasi-proportional monospace font based on Iosevka
-cask "font-zed-mono"
-# Quasi-proportional sans-serif font based on Iosevka
-cask "font-zed-sans"
+# Monospace font customized for Powerlevel10k
+cask "font-meslo-for-powerlevel10k"
 # GIT client
 cask "fork"
 # Web browser
 cask "google-chrome"
 # Utility to hide menu bar items
 cask "hiddenbar"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Menu bar calendar
 cask "itsycal"
 # File archiver
 cask "keka"
+# Blocks all Keyboard and TouchBar input
+cask "keyboardcleantool"
 # Utility that shows the latest app updates
 cask "latest"
 # Controls and monitors all fans on Apple computers
@@ -122,10 +128,10 @@ cask "microsoft-outlook"
 cask "microsoft-teams"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
-# App to write, plan, collaborate, and get organised
-cask "notion"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Web browser
@@ -152,8 +158,6 @@ cask "sequel-ace"
 cask "shottr"
 # Graphical client for Git version control
 cask "sourcetree"
-# Application for inspecting installer packages
-cask "suspicious-package"
 # Utility to hide the notch
 cask "topnotch"
 # Open-source code editor
@@ -170,88 +174,3 @@ mas "OneDrive", id: 823766827
 mas "Telegram", id: 747648890
 mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
-vscode "aaron-bond.better-comments"
-vscode "ahmadalli.vscode-nginx-conf"
-vscode "alefragnani.project-manager"
-vscode "ambooth.git-rename"
-vscode "antfu.browse-lite"
-vscode "antfu.file-nesting"
-vscode "antfu.icons-carbon"
-vscode "anweber.reveal-button"
-vscode "atlassian.atlascode"
-vscode "austinleegordon.vscode-schema-dot-org"
-vscode "brandonkirbyson.vscode-animations"
-vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
-vscode "catppuccin.catppuccin-vsc-pack"
-vscode "chakrounanas.turbo-console-log"
-vscode "christian-kohler.npm-intellisense"
-vscode "chrmarti.regex"
-vscode "cipchk.cssrem"
-vscode "codeandstuff.package-json-upgrade"
-vscode "codeium.codeium"
-vscode "csstools.postcss"
-vscode "davidanson.vscode-markdownlint"
-vscode "dbaeumer.vscode-eslint"
-vscode "deque-systems.vscode-axe-linter"
-vscode "drcika.apc-extension"
-vscode "eamodio.gitlens"
-vscode "ecmel.vscode-html-css"
-vscode "editorconfig.editorconfig"
-vscode "equinusocio.moxer-icons"
-vscode "esbenp.prettier-vscode"
-vscode "formulahendry.auto-complete-tag"
-vscode "formulahendry.auto-rename-tag"
-vscode "foxundermoon.shell-format"
-vscode "gruntfuggly.todo-tree"
-vscode "gurumukhi.selected-lines-count"
-vscode "helixquar.randomeverything"
-vscode "ibm.output-colorizer"
-vscode "jasonnutter.search-node-modules"
-vscode "jock.svg"
-vscode "julienetie.vscode-template-literals"
-vscode "kisstkondoros.vscode-gutter-preview"
-vscode "lkrms.inifmt"
-vscode "meganrogge.template-string-converter"
-vscode "mgmcdermott.vscode-language-babel"
-vscode "mhutchie.git-graph"
-vscode "miguelsolorio.fluent-icons"
-vscode "miguelsolorio.min-theme"
-vscode "miguelsolorio.symbols"
-vscode "mousavian.ssh-config-syntax-highlighter"
-vscode "mrmlnc.vscode-autoprefixer"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-vscode-remote.remote-containers"
-vscode "mutantdino.resourcemonitor"
-vscode "oderwat.indent-rainbow"
-vscode "peterschmalfeldt.explorer-exclude"
-vscode "pmneo.tsimporter"
-vscode "quicktype.quicktype"
-vscode "raillyhugo.one-hunter"
-vscode "redhat.vscode-xml"
-vscode "redhat.vscode-yaml"
-vscode "richie5um2.vscode-sort-json"
-vscode "ritwickdey.liveserver"
-vscode "sburg.vscode-javascript-booster"
-vscode "sleistner.vscode-fileutils"
-vscode "spikespaz.vscode-smoothtype"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "streetsidesoftware.code-spell-checker-medical-terms"
-vscode "streetsidesoftware.code-spell-checker-scientific-terms"
-vscode "streetsidesoftware.code-spell-checker-vietnamese"
-vscode "stylelint.vscode-stylelint"
-vscode "sveggiani.vscode-field-lights"
-vscode "syler.sass-indented"
-vscode "tomoki1207.pdf"
-vscode "tyriar.sort-lines"
-vscode "usernamehw.errorlens"
-vscode "visualstudioexptteam.vscodeintellicode"
-vscode "visualstudioexptteam.vscodeintellicode-completions"
-vscode "vivaxy.vscode-conventional-commits"
-vscode "vscode-icons-team.vscode-icons"
-vscode "wayou.vscode-todo-highlight"
-vscode "wix.vscode-import-cost"
-vscode "wmaurer.change-case"
-vscode "zhuangtongfa.material-theme"
-vscode "zignd.html-css-class-completion"
-vscode "ziterz.codesandbox-black-theme"
