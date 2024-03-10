@@ -1,10 +1,4 @@
-gulp-cli
-@vue/cli
 audiosprite
 create-turbo
-eslint
 nx
-prettier
-react-devtools
-serve
 sort-package-json
