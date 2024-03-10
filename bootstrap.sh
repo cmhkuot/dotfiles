@@ -4,7 +4,7 @@
 
 function bootstrapTerminal() {
 	sudo -v #ask password beforehand
-	source ~/.dotfiles/fresh
+	source ~/.dotfiles/fresh.sh
 }
 
 echo 'Bootstrap terminal'
