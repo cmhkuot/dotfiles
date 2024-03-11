@@ -60,8 +60,5 @@ if test -d $HOME/.nvm; then
   ln -s $DOTFILES/npm-default-packages $HOME/.nvm/default-packages
 fi
 
-# Setup SSH
-# source $DOTFILES/bin/ssh.sh
-
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/macos/set-defaults.sh
