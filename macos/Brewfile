@@ -1,3 +1,4 @@
+tap "buo/cask-upgrade"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -35,6 +36,8 @@ brew "eza"
 brew "ffmpeg"
 # Firebase command-line tools
 brew "firebase-cli"
+# OpenGL and OpenGL ES reference compiler for shading languages
+brew "glslang"
 # Command-line utility for Gulp
 brew "gulp-cli"
 # Simple terminal UI for git commands
@@ -43,6 +46,8 @@ brew "lazygit"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# Fast Cross-Platform Package Manager
+brew "micromamba"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -59,8 +64,6 @@ brew "openssh"
 brew "prettier"
 # Python version management
 brew "pyenv"
-# Command-line YAML and XML processor that wraps jq
-brew "python-yq"
 # Static http server anywhere you need one
 brew "serve"
 # Standard Tooling for Vue.js Development
@@ -89,17 +92,8 @@ cask "evkey"
 cask "figma"
 # Web browser
 cask "firefox"
-# Monospaced font that includes programming ligatures
-cask "font-cascadia-code"
-# Developer targeted fonts with a high number of glyphs
-cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
-cask "font-hack-nerd-font"
-# Variable font designed for display
-cask "font-inter"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-cask "font-lato"
 # Monospace font customized for Powerlevel10k
 cask "font-meslo-for-powerlevel10k"
 # GIT client
@@ -126,6 +120,8 @@ cask "microsoft-edge"
 cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Minimal installer for conda
+cask "miniconda"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Simple application that will prevent iTunes or Apple Music from launching
@@ -164,8 +160,6 @@ cask "topnotch"
 cask "visual-studio-code"
 # Rust-based terminal
 cask "warp"
-# Multiplayer code editor
-cask "zed"
 mas "Bitwarden", id: 1352778147
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816

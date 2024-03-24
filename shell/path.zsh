@@ -17,6 +17,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# flutter
+export PATH=$HOME/flutter/bin:$PATH
+
 # Load PHP
 export PATH="/opt/homebrew/opt/php/bin:$PATH"
 export PATH="/opt/homebrew/opt/php/sbin:$PATH"
