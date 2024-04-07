@@ -10,8 +10,6 @@ tap "teamookla/speedtest"
 brew "webp"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Secure and free password manager for all of your devices
-brew "bitwarden-cli"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
@@ -28,18 +26,12 @@ brew "docker"
 brew "docker-clean"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-# AST-based pattern checker for JavaScript
-brew "eslint"
 # Modern, maintained replacement for ls
 brew "eza"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Firebase command-line tools
-brew "firebase-cli"
 # OpenGL and OpenGL ES reference compiler for shading languages
 brew "glslang"
-# Command-line utility for Gulp
-brew "gulp-cli"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Keep your Mac's application settings in sync
@@ -60,14 +52,10 @@ brew "nss"
 brew "nvm"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
-# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
-brew "prettier"
 # Python version management
 brew "pyenv"
 # Static http server anywhere you need one
 brew "serve"
-# Standard Tooling for Vue.js Development
-brew "vue-cli"
 # JavaScript package manager
 brew "yarn"
 # Ookla Speedtest
@@ -80,10 +68,8 @@ cask "android-studio"
 cask "appcleaner"
 # 3D creation suite
 cask "blender"
-# Web browser focusing on privacy
-cask "brave-browser"
-# Tool to list all active shortcuts of the current application
-cask "cheatsheet"
+# Utility that allows increased screen brightness
+cask "brightintosh"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Vietnamese keyboard
@@ -92,6 +78,8 @@ cask "evkey"
 cask "figma"
 # Web browser
 cask "firefox"
+# Developer targeted fonts with a high number of glyphs
+cask "font-fira-code-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 # Monospace font customized for Powerlevel10k
@@ -116,8 +104,6 @@ cask "macs-fan-control"
 cask "microsoft-auto-update"
 # Web browser
 cask "microsoft-edge"
-# Email client
-cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Minimal installer for conda
@@ -128,6 +114,8 @@ cask "monitorcontrol"
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# System and utility switches
+cask "only-switch"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Web browser
@@ -162,6 +150,7 @@ cask "visual-studio-code"
 cask "warp"
 mas "Bitwarden", id: 1352778147
 mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "OneDrive", id: 823766827
