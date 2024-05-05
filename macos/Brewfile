@@ -56,10 +56,14 @@ brew "openssh"
 brew "pyenv"
 # Static http server anywhere you need one
 brew "serve"
+# Cross-shell prompt for astronauts
+brew "starship"
 # JavaScript package manager
 brew "yarn"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# Web browser
+cask "alex313031-thorium"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Tools for building Android applications
@@ -122,6 +126,8 @@ cask "openinterminal"
 cask "opera"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Collaboration platform for API development
+cask "postman"
 # Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
 # Quick Look generator for Markdown files

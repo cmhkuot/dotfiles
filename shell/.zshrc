@@ -8,14 +8,14 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH="$HOME/.oh-my-zsh"
 
 # Minimal - Theme Settings
-export MNML_INSERT_CHAR="$"
-export MNML_PROMPT=(mnml_cwd mnml_keymap)
-export MNML_RPROMPT=('mnml_git 20')
+# export MNML_INSERT_CHAR="$"
+# export MNML_PROMPT=(mnml_cwd mnml_keymap)
+# export MNML_RPROMPT=('mnml_git 20')
 
 # ZSH-NVM settings
 export NVM_COMPLETION=true
 export NVM_AUTO_USE=true
-export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD=true
 # export NVM_NO_USE=true
 
 # Hide username in prompt
@@ -25,7 +25,7 @@ export NVM_LAZY_LOAD=true
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal"
+ZSH_THEME="simple"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -198,3 +198,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export STARSHIP_CONFIG="$DOTFILES/shell/starship.toml"
+
+eval "$(starship init zsh)"
