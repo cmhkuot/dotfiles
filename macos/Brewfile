@@ -62,18 +62,18 @@ brew "starship"
 brew "yarn"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
-# Web browser
-cask "alex313031-thorium"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Tools for building Android applications
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
+# Chromium based browser
+cask "arc"
 # 3D creation suite
 cask "blender"
-# Utility that allows increased screen brightness
-cask "brightintosh"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Vietnamese keyboard
@@ -126,16 +126,18 @@ cask "openinterminal"
 cask "opera"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Collaboration platform for API development
-cask "postman"
 # Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
+# Display image info and preview unsupported formats in QuickLook
+cask "qlimagesize"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
 # Quick Look plugin to view patch files
 cask "qlprettypatch"
 # Quick Look plugin for plaintext files without an extension
 cask "qlstephen"
+# Thumbnails, static previews, cover art and metadata for video files
+cask "qlvideo"
 # Quick Look plugin for CSV files
 cask "quicklook-csv"
 # Quick Look plugin for JSON files
@@ -154,12 +156,12 @@ cask "topnotch"
 cask "visual-studio-code"
 # Rust-based terminal
 cask "warp"
+# Quick Look plugin for webp files
+cask "webpquicklook"
 mas "Bitwarden", id: 1352778147
 mas "Microsoft Excel", id: 462058435
-mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "OneDrive", id: 823766827
-mas "Telegram", id: 747648890
 mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
