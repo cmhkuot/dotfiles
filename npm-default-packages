@@ -1,10 +1,7 @@
 audiosprite
 create-turbo
-eslint
 nx
-prettier
 sort-package-json
 @bitwarden/cli
 firebase-cli
 gulp-cli
-vue-cli
