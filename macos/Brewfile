@@ -49,8 +49,6 @@ brew "nginx"
 brew "nss"
 # Manage multiple Node.js versions
 brew "nvm"
-# Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: true
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
 # Python version management
@@ -77,12 +75,12 @@ cask "evkey"
 cask "figma"
 # Web browser
 cask "firefox"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
-# Monospace font customized for Powerlevel10k
 cask "font-meslo-for-powerlevel10k"
+cask "font-zed-mono"
+cask "font-zed-sans"
 # GIT client
 cask "fork"
 # Web browser
@@ -101,12 +99,14 @@ cask "keka"
 cask "keyboardcleantool"
 # Utility that shows the latest app updates
 cask "latest"
-# Web browser
-cask "librewolf"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Minimal installer for conda
 cask "miniconda"
 # Tool to control external monitor brightness & volume
@@ -115,11 +115,13 @@ cask "monitorcontrol"
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Verify system files structure, run miscellaneous maintenance and more
+cask "onyx"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Utility to uninstall apps and clean-up leftover files
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
@@ -143,6 +145,8 @@ cask "raycast"
 cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Video chat, voice call and instant messaging application
+cask "skype"
 # Graphical client for Git version control
 cask "sourcetree"
 # Utility to hide the notch
@@ -151,3 +155,11 @@ cask "topnotch"
 cask "visual-studio-code"
 # Quick Look plugin for webp files
 cask "webpquicklook"
+mas "Bitwarden", id: 1352778147
+mas "CotEditor", id: 1024640650
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "OneDrive", id: 823766827
+mas "Tot", id: 1491071483
+mas "Xcode", id: 497799835
