@@ -1,0 +1,57 @@
+# Execute a command silently, discarding all output.
+function silent() {
+  "$@" >&/dev/null
+}
+
+# Retrieves the weather forecast for a specified city using the wttr.in service.
+# @param $1 - the city for which to retrieve the weather forecast
+# @returns the weather forecast for the specified city
+function weather() {
+  city="$1"
+  if [ -z "$city" ]; then
+    eval "curl http://wttr.in/"
+  else
+    eval "curl http://wttr.in/${city}"
+  fi
+
+}
+
+function archive() {
+  zip -r "$1".zip -i "$1"
+}
+
+function removehost() {
+  ssh-keygen -R "$1"
+}
+
+#shortcut voor zhs quick-look command
+function ql() {
+  quick-look "$1"
+}
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+#  Commit everything
+# function commit() {
+#   commitMessage="$*"
+
+#   if [ "$commitMessage" = "" ]; then
+#     commitMessage="wip"
+#   fi
+
+#   git add .
+#   eval "git commit -a -m '${commitMessage}'"
+# }
+
+function sshcopy() {
+  id="$*"
+
+  if [ "$id" = "" ]; then
+    id="id_ed22519-default"
+  fi
+
+  pbcopy < ~/.ssh/$id.pub
+}
