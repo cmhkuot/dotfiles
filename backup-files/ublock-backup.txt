@@ -1,14 +1,15 @@
 {
-  "timeStamp": 1727936224025,
-  "version": "1.60.0",
+  "timeStamp": 1733304837366,
+  "version": "1.61.2",
   "userSettings": {
-    "advancedUserEnabled": true,
     "cloudStorageEnabled": true,
-    "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+    "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts",
     "ignoreGenericCosmeticFilters": true,
     "importedLists": [
-      "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+      "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+      "https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts"
     ],
+    "prefetchingDisabled": false,
     "suspendUntilListsAreLoaded": true
   },
   "selectedFilterLists": [
@@ -26,27 +27,32 @@
     "plowe-0",
     "ublock-annoyances",
     "VIE-1",
-    "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+    "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+    "https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts"
   ],
   "hiddenSettings": {},
   "whitelist": [
-    "about-scheme",
     "admin.connect.coca-cola.com",
+    "apps.coca-cola.com",
     "browserbench.org",
     "chrome-extension-scheme",
-    "chrome-scheme",
-    "edge-scheme",
+    "devapps.coca-cola.com",
+    "jira.asiadigitalhub.net",
     "localhost",
+    "login.apac.coca-cola.com",
     "moz-extension-scheme",
-    "opera-scheme",
+    "passwords.ogilvy.com",
+    "preview-p58902-e658605.adobeaemcloud.com",
     "pxl-prj.s3-website-ap-southeast-1.amazonaws.com",
     "pxl-web.s3-website-ap-southeast-1.amazonaws.com",
+    "rd-dev.asiadigitalhub.net",
     "rd-ogilvy.web.app",
     "rd-stage.web.app",
     "rd.ogilvyone.com",
-    "vivaldi-scheme",
     "vt-gcp-sandbox.web.app",
-    "wyciwyg-scheme"
+    "web-game-a118b.web.app",
+    "wpponlinetraining.com",
+    "www.coca-cola.com"
   ],
   "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop",
   "urlFilteringString": "",

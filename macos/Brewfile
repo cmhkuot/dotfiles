@@ -1,9 +1,4 @@
-tap "alienator88/cask"
 tap "buo/cask-upgrade"
-tap "homebrew/autoupdate"
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "shivammathur/php"
 tap "teamookla/speedtest"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
@@ -23,6 +18,8 @@ brew "dnsmasq"
 brew "docker"
 # Clean Docker containers, images, networks, and volumes
 brew "docker-clean"
+# Isolated development environments using Docker
+brew "docker-compose"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Modern, maintained replacement for ls
@@ -31,6 +28,8 @@ brew "eza"
 brew "ffmpeg"
 # OpenGL and OpenGL ES reference compiler for shading languages
 brew "glslang"
+# Improved top (interactive process viewer)
+brew "htop"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Keep your Mac's application settings in sync
@@ -47,52 +46,58 @@ brew "neovim"
 brew "nginx"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Manage multiple Node.js versions
-brew "nvm"
+# Development kit for the Java programming language
+brew "openjdk"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Python version management
 brew "pyenv"
+# Python interface to Tcl/Tk
+brew "python-tk@3.13"
 # Static http server anywhere you need one
 brew "serve"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Upgrade all the things
+brew "topgrade"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # JavaScript package manager
 brew "yarn"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
-# Tools for building Android applications
-cask "android-studio"
 # Utility improving 3rd party mouse performance and functionalities
 cask "bettermouse"
 # 3D creation suite
 cask "blender"
-# Web browser focusing on privacy
-cask "brave-browser"
-# Vietnamese keyboard
-cask "evkey"
+# Test localhost and staging websites
+cask "browserstacklocal"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Collaborative team software
 cask "figma"
 # Web browser
 cask "firefox"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono"
-cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-for-powerlevel10k"
-cask "font-zed-mono"
-cask "font-zed-sans"
+cask "font-monaspace"
 # GIT client
 cask "fork"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Desktop client for GitHub repositories
+cask "github"
 # Web browser
 cask "google-chrome"
-# Utility to hide menu bar items
-cask "hiddenbar"
-# Free and open-source media player
-cask "iina"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Menu bar calendar
 cask "itsycal"
+# Menu bar manager
+cask "jordanbaird-ice"
 # File archiver
 cask "keka"
 # Blocks all Keyboard and TouchBar input
@@ -103,10 +108,6 @@ cask "latest"
 cask "lm-studio"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-# Meet, chat, call, and collaborate in just one place
-cask "microsoft-teams"
 # Minimal installer for conda
 cask "miniconda"
 # Tool to control external monitor brightness & volume
@@ -119,14 +120,14 @@ cask "obsidian"
 cask "onyx"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
+# Vietnamese input system
+cask "openkey"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
-# Display image info and preview unsupported formats in QuickLook
-cask "qlimagesize"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
 # Quick Look plugin to view patch files
@@ -145,21 +146,19 @@ cask "raycast"
 cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
-# Video chat, voice call and instant messaging application
-cask "skype"
 # Graphical client for Git version control
 cask "sourcetree"
-# Utility to hide the notch
-cask "topnotch"
+# Music streaming service
+cask "spotify"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Batch rename utility
+cask "transnomino"
 # Open-source code editor
 cask "visual-studio-code"
 # Quick Look plugin for webp files
 cask "webpquicklook"
-mas "Bitwarden", id: 1352778147
-mas "CotEditor", id: 1024640650
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
-mas "OneDrive", id: 823766827
-mas "Tot", id: 1491071483
-mas "Xcode", id: 497799835
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Multiplayer code editor
+cask "zed"

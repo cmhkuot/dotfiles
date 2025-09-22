@@ -1,7 +1,3 @@
-audiosprite
-create-turbo
-nx
-sort-package-json
 @bitwarden/cli
-firebase-cli
-gulp-cli
+firebase-tools
+eslint

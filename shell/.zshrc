@@ -91,13 +91,13 @@ ZSH_CUSTOM=$DOTFILES/shell
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    brew
-    dotenv
+    # brew
+    # dotenv
     zsh-nvm
     aliases
     colored-man-pages
     command-not-found
-    zsh-you-should-use
+    # zsh-you-should-use
     zsh-autosuggestions
     yarn-autocompletions
     zsh-syntax-highlighting
@@ -105,6 +105,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/.functions
+
 
 # Import ssh keys in keychain
 ssh-add -A 2>/dev/null
@@ -154,17 +155,11 @@ export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
-# Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$PATH:$NPM_PACKAGES/bin"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste up-line-or-search down-line-or-search expand-or-complete accept-line push-line-or-edit)
 
-export NVM_SYMLINK_CURRENT=true
-export NODE_OPTIONS="--no-deprecation"
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="(cd *|curl *)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -186,7 +181,7 @@ unset __mamba_setup
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -205,3 +200,30 @@ eval "$(starship init zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+eval "$(uv generate-shell-completion zsh)"
+
+eval "$(uvx --generate-shell-completion zsh)"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
+
+# Added by Windsurf
+export PATH="/Users/sondo/.codeium/windsurf/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sondo/.cache/lm-studio/bin"
+
+export NVM_SYMLINK_CURRENT=true
+
+export NODE_OPTIONS="--no-deprecation"
+
+# Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Load NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
