@@ -74,6 +74,8 @@ brew "teamookla/speedtest/speedtest"
 cask "bettermouse"
 # 3D creation suite
 cask "blender"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
 # OpenAI's official ChatGPT desktop app
@@ -116,6 +118,8 @@ cask "monitorcontrol"
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Cloud storage client
+cask "onedrive"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
 # Finder Toolbar app to open the current directory in Terminal or Editor
