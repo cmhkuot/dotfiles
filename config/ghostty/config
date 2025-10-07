@@ -1,0 +1,13 @@
+theme = guezwhoz
+font-family = Jetbrains Mono
+font-size = 14
+cursor-style = underline
+cursor-style-blink = true
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+shell-integration-features = true
+
+# Start new shells in home and do not inherit last working directory
+window-inherit-working-directory = false
+working-directory = home

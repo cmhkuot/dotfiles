@@ -1,26 +1,36 @@
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases for macOS zsh
+# Clean, deduplicated, and organized
 
+# -------------------------------------------------
 # Shortcuts
+# -------------------------------------------------
 alias o="open ."
-alias zshedit="code ~/.dotfiles/shell/.zshrc"
-alias reloadshell="omz reload"
-alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew' #To fix brew doctor's warning ""config" scripts exist outside your system or Homebrew directories"
-alias brewbackup="brew bundle dump -f"
-alias brewcleanup="brew cleanup --prune=30"
+alias reload_shell="omz reload" # Reload Zsh configuration
+
+# -------------------------------------------------
+# Homebrew
+# -------------------------------------------------
+# To fix brew doctor's warning: "config scripts exist outside your system or Homebrew directories"
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias brew_backup="brew bundle dump -f"
+alias brew_cleanup="brew cleanup --prune=30"
+
+# -------------------------------------------------
+# Python (via pyenv)
+# -------------------------------------------------
 alias python="$(pyenv which python)"
 alias pip="$(pyenv which pip)"
 
-# alias cleanmymac="$DOTFILES/bin/cleanup.sh" # Cleanup caches and temporary files of Mac
-alias gatekeeper="$DOTFILES/bin/gatekeeper.sh" # Gatekeeper hepler
+# -------------------------------------------------
+# System utilities
+# -------------------------------------------------
+alias gatekeeper="$DOTFILES/bin/gatekeeper.sh" # Gatekeeper helper
+alias ssh_config="code ~/.ssh/config"
+alias hostfile="sudo vi /etc/hosts"
 
+# -------------------------------------------------
+# File listing (eza)
+# -------------------------------------------------
 # * lists everything with directories first
 alias ll="eza -al --group-directories-first"
 # * lists only directories (no files)
@@ -33,70 +43,73 @@ alias lh="eza -dl .* --group-directories-first"
 alias ls="eza -alF --color=always --sort=size | grep -v /"
 # * lists everything sorted by time updated
 alias lt="eza -al --sort=modified"
+# Better tree view
+alias tree='eza --tree --level=3'
+alias treel='eza --tree --level=2 -l'
 
-# alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-# alias compile="commit 'compile'"
-# alias version="commit 'version'"
-alias sshconfig="code ~/.ssh/config"
-alias hostfile="sudo vi /etc/hosts"
-
+# -------------------------------------------------
 # Directories
+# -------------------------------------------------
 alias dotfiles="cd $DOTFILES"
 alias projects="cd $HOME/Code"
 alias library="cd $HOME/Library"
 
-# IP addresses
+# -------------------------------------------------
+# Network
+# -------------------------------------------------
 alias ip="curl ipconfig.pw/json"
-alias localip="ifconfig -a | grep -o 'inet\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet? (addr:)? ?/, \"\"); print }'"
+alias local_ip="ifconfig -a | grep -o 'inet\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet? (addr:)? ?/, ""); print }'"
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
 
-# Laravel
-# alias a="php artisan"
-# alias fresh="php artisan migrate:fresh --seed"
-# alias tinker="php artisan tinker"
-# alias seed="php artisan db:seed"
-# alias serve="php artisan serve"
+# -------------------------------------------------
+# Development helpers
+# -------------------------------------------------
+alias npm_fresh="rm -rf node_modules/ package-lock.json && npm install"
+alias yarn_fresh="rm -rf node_modules/ package-lock.json yarn.lock && yarn install"
+alias url_encode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+alias url_decode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
 
-# PHP
-# alias cfresh="rm -rf vendor/ composer.lock && composer i"
+# -------------------------------------------------
+# Docker shortcuts
+# -------------------------------------------------
+# alias dps='docker ps'
+# alias dimg='docker images'
+# alias dexec='docker exec -it'
+# alias dlog='docker logs -f'
+# alias dclean='docker system prune -af'
 
-# JS
-alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias yfresh="rm -rf node_modules/ package-lock.json yarn.lock && yarn install"
-# alias watch="npm run watch"
+# -------------------------------------------------
+# System monitoring
+# -------------------------------------------------
+alias meminfo='top -l 1 -s 0 | grep PhysMem'
+alias psmem='ps auxf | sort -nr -k 4 | head -10'
+alias pscpu='ps auxf | sort -nr -k 3 | head -10'
+alias cpu='top -l 2 -s 0 | grep "CPU usage"'
+alias shtop='sudo htop' # run htop with root rights
 
-# Docker
-# alias docker-composer="docker-compose"
-
-# Git
-# alias gst="git status"
-# alias gb="git branch"
-# alias gc="git checkout"
-# alias gl="git log --oneline --decorate --color"
-# alias amend="git add . && git commit --amend --no-edit"
-# alias commit="git add . && git commit -m"
-# alias diff="git diff"
-# alias force="git push --force"
-# alias nuke="git clean -df && git reset --hard"
-# alias pop="git stash pop"
-# alias pull="git pull"
-# alias push="git push"
-# alias resolve="git add . && git commit --no-edit"
-# alias stash="git stash -u"
-# alias unstage="git restore --staged ."
-# alias wip="commit wip"
-
-# Flush Directory Service cache
-alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-
-# Redis
-# alias flush-redis="redis-cli FLUSHALL"
-
+# -------------------------------------------------
+# System maintenance
+# -------------------------------------------------
+alias cleanup='brew cleanup --prune=30 && brew autoremove && npm cache clean --force && yarn cache clean'
 # Lock the screen
 alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
-
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias empty_trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+# Flush Directory Service cache
+alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
-# run `htop` with root rights
-alias shtop='sudo htop'
+# -------------------------------------------------
+# Better defaults
+# -------------------------------------------------
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# -------------------------------------------------
+# Quick navigation
+# -------------------------------------------------
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'

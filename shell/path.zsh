@@ -1,30 +1,57 @@
-# Load dotfiles binaries
-export PATH="$DOTFILES/bin:$PATH"
+#!/usr/bin/env zsh
+#
+# PATH configuration for development tools
+#
 
-# Load Composer tools
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+# Helper function to add to PATH if directory exists
+path_add() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="$1:$PATH"
+    fi
+}
+# User-specific bin directory
+path_add "$HOME/bin"
 
-# Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
+# Dotfiles binaries (highest priority)
+path_add "$DOTFILES/bin"
 
-# Use project specific binaries before global ones
-export PATH="node_modules/.bin:vendor/bin:$PATH"
+# Local project binaries (second highest priority)
+path_add "node_modules/.bin"
+path_add "vendor/bin"
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
+# Homebrew binaries
+path_add "/opt/homebrew/bin"
+path_add "/opt/homebrew/sbin"
 
-export PATH="$HOME/.yarn/bin:$PATH"
+# Development tools
+path_add "$HOME/.composer/vendor/bin"  # Composer global packages
+path_add "$HOME/.node/bin"             # Node global binaries
+path_add "$HOME/.yarn/bin"             # Yarn global binaries
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# Language specific tools
+path_add "/opt/homebrew/opt/openjdk/bin"    # Java
+path_add "/opt/homebrew/opt/php/bin"        # PHP binaries
+path_add "/opt/homebrew/opt/php/sbin"       # PHP system binaries
+path_add "/usr/local/opt/openjdk/bin"       # Java (fallback location)
 
-# flutter
-export PATH=$HOME/flutter/bin:$PATH
+# Framework specific
+path_add "$HOME/flutter/bin"               # Flutter SDK
+path_add "$HOME/go/bin"                    # Go binaries
+path_add "$HOME/.cargo/bin"                # Rust binaries
 
-# Load PHP
-export PATH="/opt/homebrew/opt/php/bin:$PATH"
-export PATH="/opt/homebrew/opt/php/sbin:$PATH"
+# Python tools (if using system Python)
+path_add "$HOME/.local/bin"
 
-# Make sure coreutils are loaded before system commands
-# I've disabled this for now because I only use "ls" which is
-# referenced in my aliases.zsh file directly.
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# macOS specific
+path_add "/usr/local/bin"
+path_add "/usr/local/sbin"
+
+# Optional: GNU coreutils (uncomment if needed)
+# Note: This can cause compatibility issues with some scripts
+# path_add "$(brew --prefix coreutils)/libexec/gnubin"
+
+# Clean up function
+unset -f path_add
+
+# Export final PATH
+export PATH

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 echo "Running Clean Your Mac Script 💛"
 echo -n "Do you want to perform Brew 🍺 tasks(y/n)? "

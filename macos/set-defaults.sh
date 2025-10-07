@@ -17,10 +17,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Space Racer"
-sudo scutil --set HostName "spaceracer"
-sudo scutil --set LocalHostName "spaceracer"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "spaceracer"
+# sudo scutil --set ComputerName "Space Racer"
+# sudo scutil --set HostName "spaceracer"
+# sudo scutil --set LocalHostName "spaceracer"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "spaceracer"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -710,7 +710,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 # open "${HOME}/init/Solarized Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+# defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
