@@ -1,7 +1,7 @@
 
 
 # Performance monitoring (optional - comment out in production)
-zmodload zsh/zprof  # Uncomment to enable profiling
+# zmodload zsh/zprof  # Uncomment to enable profiling
 # To use: uncomment 'zprof' at the end of .zshrc to see startup performance
 
 # Path to your dotfiles
@@ -100,4 +100,4 @@ fi
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # Performance monitoring (optional - comment out in production)
-zprof # Uncomment to enable profiling
+# zprof # Uncomment to enable profiling
