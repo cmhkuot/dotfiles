@@ -34,12 +34,8 @@ brew "glslang"
 brew "htop"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Keep your Mac's application settings in sync
-brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
-# Fast Cross-Platform Package Manager
-brew "micromamba"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -107,16 +103,12 @@ cask "lm-studio"
 cask "macs-fan-control"
 # Multi-platform web browser
 cask "microsoft-edge"
-# Minimal installer for conda
-cask "miniconda"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Vietnamese input system
@@ -141,6 +133,7 @@ cask "utm"
 cask "visual-studio-code"
 # Multiplayer code editor
 cask "zed"
+mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Folder Quick Look", id: 6753110395
 mas "Okta Verify", id: 490179405
