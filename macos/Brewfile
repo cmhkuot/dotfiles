@@ -24,14 +24,22 @@ brew "duti"
 brew "eza"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Firebase command-line tools
+brew "firebase-cli"
+# Distributed revision control system
+brew "git"
 # OpenGL and OpenGL ES reference compiler for shading languages
 brew "glslang"
 # Improved top (interactive process viewer)
 brew "htop"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Keep your Mac's application settings in sync
+brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
+# Fast Cross-Platform Package Manager
+brew "micromamba"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -50,8 +58,12 @@ brew "pkgconf"
 brew "pnpm"
 # Python version management
 brew "pyenv"
+# Python interface to Tcl/Tk
+brew "python-tk@3.13"
 # Static http server anywhere you need one
 brew "serve"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Upgrade all the things
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -75,6 +87,8 @@ cask "firefox"
 cask "font-jetbrains-mono"
 # GIT client
 cask "fork"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Web browser
@@ -91,14 +105,18 @@ cask "latest"
 cask "lm-studio"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
+# Multi-platform web browser
+cask "microsoft-edge"
+# Minimal installer for conda
+cask "miniconda"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Cloud storage client
-cask "onedrive"
+# Verify system files structure, run miscellaneous maintenance and more
+cask "onyx"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Vietnamese input system
@@ -115,17 +133,15 @@ cask "raycast"
 cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
-# Graphical client for Git version control
-cask "sourcetree"
 # Music streaming service
 cask "spotify"
-# Batch rename utility
-cask "transnomino"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
-# Native desktop client for WhatsApp
-cask "whatsapp"
 # Multiplayer code editor
 cask "zed"
+mas "CotEditor", id: 1024640650
+mas "Folder Quick Look", id: 6753110395
+mas "Okta Verify", id: 490179405
+mas "Xcode", id: 497799835
