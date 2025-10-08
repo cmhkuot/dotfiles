@@ -1,5 +1,9 @@
 
 
+# Performance monitoring (optional - comment out in production)
+zmodload zsh/zprof  # Uncomment to enable profiling
+# To use: uncomment 'zprof' at the end of .zshrc to see startup performance
+
 # Path to your dotfiles
 export DOTFILES=$HOME/.dotfiles
 
@@ -11,8 +15,12 @@ ZSH_THEME="ultima"
 ZSH_DISABLE_COMPFIX=true
 
 # ZSH-NVM settings
+export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
-export NVM_AUTO_USE=true
+export NVM_AUTO_USE=true # Only works if nvm is already loaded in session
+export NVM_LAZY_LOAD=true
+# Optional: trigger lazy-load on extra commands (uncomment to enable)
+# export NVM_LAZY_LOAD_EXTRA_COMMANDS=('pnpm' 'corepack')
 
 # Oh My Zsh update settings
 zstyle ':omz:update' mode auto
@@ -82,9 +90,6 @@ eval "$(pyenv init - zsh)"
 # Node/NVM
 export NVM_SYMLINK_CURRENT=true
 export NODE_OPTIONS="--no-deprecation"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Ghostty integration
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
@@ -93,3 +98,6 @@ fi
 
 # Compilation flags
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# Performance monitoring (optional - comment out in production)
+zprof # Uncomment to enable profiling
