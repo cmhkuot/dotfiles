@@ -1,0 +1,20 @@
+# Antidote plugin bundle for Zsh
+# Syntax: one plugin per line. Supports Oh My Zsh plugins via 'ohmyzsh/ohmyzsh path:plugins/<name>'
+# For pure plugin repos, use 'owner/repo' optionally with path: and branch:
+
+# Core completions and performance
+zsh-users/zsh-completions
+
+# Autosuggestions
+zsh-users/zsh-autosuggestions
+
+# Syntax highlighting (must be last)
+zsh-users/zsh-syntax-highlighting
+
+# Oh My Zsh plugins replicated via Antidote
+ohmyzsh/ohmyzsh path:plugins/nvm
+ohmyzsh/ohmyzsh path:plugins/npm
+ohmyzsh/ohmyzsh path:plugins/yarn
+ohmyzsh/ohmyzsh path:plugins/colorize
+# gcloud plugin (uses gcloud SDK completions)
+ohmyzsh/ohmyzsh path:plugins/gcloud
