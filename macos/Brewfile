@@ -64,6 +64,12 @@ brew "topgrade"
 brew "uv"
 # JavaScript package manager
 brew "yarn"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # Utility improving 3rd party mouse performance and functionalities
 cask "bettermouse"
 # 3D creation suite
