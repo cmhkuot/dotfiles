@@ -58,8 +58,6 @@ brew "pyenv"
 brew "python-tk@3.13"
 # Static http server anywhere you need one
 brew "serve"
-# Cross-shell prompt for astronauts
-brew "starship"
 # Upgrade all the things
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -109,6 +107,8 @@ cask "monitorcontrol"
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Cloud storage client
+cask "onedrive"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
 # Vietnamese input system
@@ -125,8 +125,12 @@ cask "raycast"
 cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Graphical client for Git version control
+cask "sourcetree"
 # Music streaming service
 cask "spotify"
+# Batch rename utility
+cask "transnomino"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
@@ -136,5 +140,10 @@ cask "zed"
 mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Folder Quick Look", id: 6753110395
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
 mas "Okta Verify", id: 490179405
+mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835
