@@ -55,9 +55,11 @@ ZSH_CUSTOM=$DOTFILES/shell
 
 # Plugins
 plugins=(
-	yarn
 	nvm
+	npm
+	yarn
 	colorize
+	gcloud
 )
 
 source $ZSH/oh-my-zsh.sh

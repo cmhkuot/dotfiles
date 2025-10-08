@@ -1,5 +1,4 @@
 @bitwarden/cli
-firebase-tools
 eslint
 turbo
 corepack
