@@ -4,13 +4,13 @@ echo "Running Clean Your Mac Script 💛"
 echo -n "Do you want to perform Brew 🍺 tasks(y/n)? "
 read ANSWER
 
-if [ "$ANSWER" != "${ANSWER#[Yy]}" ] ;then
-#Updating brew
-echo "Updating Brew 🍺 and Cleaning up the Cask 🌊. This might take some time depending upon your network connection and packages installed."
-brew update
-brew upgrade
-brew cleanup --prune=30
-brew doctor
+if [ "$ANSWER" != "${ANSWER#[Yy]}" ]; then
+    #Updating brew
+    echo "Updating Brew 🍺 and Cleaning up the Cask 🌊. This might take some time depending upon your network connection and packages installed."
+    brew update
+    brew upgrade
+    brew cleanup --prune=30
+    brew doctor
 fi
 
 #user cache file
@@ -46,8 +46,7 @@ echo "✅ Done Cleaning from ~/Pictures/iPhoto Library/iPod Photo Cache"
 
 #application caches
 echo "Cleaning application caches"
-for x in $(ls ~/Library/Containers/)
-do
+for x in $(ls ~/Library/Containers/); do
     echo "Cleaning ~/Library/Containers/$x/Data/Library/Caches/"
     rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
     echo "✅ Done Cleaning ~/Library/Containers/$x/Data/Library/Caches"

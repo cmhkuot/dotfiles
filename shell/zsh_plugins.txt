@@ -16,5 +16,4 @@ ohmyzsh/ohmyzsh path:plugins/nvm
 ohmyzsh/ohmyzsh path:plugins/npm
 ohmyzsh/ohmyzsh path:plugins/yarn
 ohmyzsh/ohmyzsh path:plugins/colorize
-# gcloud plugin (uses gcloud SDK completions)
 ohmyzsh/ohmyzsh path:plugins/gcloud

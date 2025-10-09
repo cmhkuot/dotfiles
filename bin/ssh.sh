@@ -73,18 +73,17 @@ if [ -f "${FILENAME}" ]; then
 	echo Using existing key
 else
 	echo Creating a new key using ${SSH-KEYGEN}
-    ${SSH_KEYGEN} -t $KEYTYPE -b $KEYSIZE  -f "${FILENAME}" -N "${PASSPHRASE}"
-    RET=$?
-    if [ ${RET} -ne 0 ];then
-        echo ssh-keygen failed: ${RET}
-        exit 1
-    fi
+	${SSH_KEYGEN} -t $KEYTYPE -b $KEYSIZE -f "${FILENAME}" -N "${PASSPHRASE}"
+	RET=$?
+	if [ ${RET} -ne 0 ]; then
+		echo ssh-keygen failed: ${RET}
+		exit 1
+	fi
 fi
 
 if [ ! -f "${FILENAME}.pub" ]; then
 	echo Did not find the expected public key at ${FILENAME}.pub
 	exit 1
 fi
-
 
 # echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_ed25519" | tee ~/.ssh/config

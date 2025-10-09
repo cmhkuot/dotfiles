@@ -3,163 +3,162 @@ source "$DOTFILES/bin/safe_symlink.sh"
 
 # Quick Look a file
 ql() {
-    qlmanage -p "$1"
+  qlmanage -p "$1"
 }
 
 # List available SSH public keys and copy selected one to clipboard
 ssh_copy() {
-    local ssh_dir="$HOME/.ssh"
-    local keys=("$ssh_dir"/*.pub)
-    if [ ! -d "$ssh_dir" ] || [ ${#keys[@]} -eq 0 ]; then
-        echo "No SSH public keys found in $ssh_dir"
-        return 1
-    fi
-    echo "Available SSH public keys:"
-    local i=1
-    for key in "${keys[@]}"; do
-        echo "  [$i] $(basename "$key")"
-        ((i++))
-    done
-    echo -n "Select key to copy [1-${#keys[@]}]: "
-    read -r idx
-    if [[ ! "$idx" =~ ^[0-9]+$ ]] || [ "$idx" -lt 1 ] || [ "$idx" -gt ${#keys[@]} ]; then
-        echo "Invalid selection."
-        return 1
-    fi
-    local selected_key="${keys[$((idx - 1))]}"
-    pbcopy <"$selected_key"
-    echo "Copied: $(basename "$selected_key") to clipboard."
+  local ssh_dir="$HOME/.ssh"
+  local keys=("$ssh_dir"/*.pub)
+  if [ ! -d "$ssh_dir" ] || [ ${#keys[@]} -eq 0 ]; then
+    echo "No SSH public keys found in $ssh_dir"
+    return 1
+  fi
+  echo "Available SSH public keys:"
+  local i=1
+  for key in "${keys[@]}"; do
+    echo "  [$i] $(basename "$key")"
+    ((i++))
+  done
+  echo -n "Select key to copy [1-${#keys[@]}]: "
+  read -r idx
+  if [[ ! "$idx" =~ ^[0-9]+$ ]] || [ "$idx" -lt 1 ] || [ "$idx" -gt ${#keys[@]} ]; then
+    echo "Invalid selection."
+    return 1
+  fi
+  local selected_key="${keys[$((idx - 1))]}"
+  pbcopy <"$selected_key"
+  echo "Copied: $(basename "$selected_key") to clipboard."
 }
 
 # Quick backup function
 backup() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: backup <file/directory>"
-        return 1
-    fi
+  if [ $# -eq 0 ]; then
+    echo "Usage: backup <file/directory>"
+    return 1
+  fi
 
-    local source="$1"
-    local backup_name="${source}.backup.$(date +%Y%m%d_%H%M%S)"
+  local source="$1"
+  local backup_name="${source}.backup.$(date +%Y%m%d_%H%M%S)"
 
-    if [ -e "$source" ]; then
-        cp -r "$source" "$backup_name"
-        echo "Backed up $source to $backup_name"
-    else
-        echo "Error: $source does not exist"
-        return 1
-    fi
+  if [ -e "$source" ]; then
+    cp -r "$source" "$backup_name"
+    echo "Backed up $source to $backup_name"
+  else
+    echo "Error: $source does not exist"
+    return 1
+  fi
 }
 
 # Compress multiple files/directories into a zip file
 archive() {
-    if [ "$#" -lt 2 ]; then
-        echo "Usage: archive <output.zip> <files_or_dirs...>"
-        return 1
-    fi
-    local output="$1"
-    shift
-    zip -r -- "$output" "$@"
+  if [ "$#" -lt 2 ]; then
+    echo "Usage: archive <output.zip> <files_or_dirs...>"
+    return 1
+  fi
+  local output="$1"
+  shift
+  zip -r -- "$output" "$@"
 }
 
 # Extract common archive formats (zip, tar, gz, bz2, rar, 7z...)
 extract() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: extract <archive_file>"
-        return 1
-    fi
-    local file="$1"
-    if [ ! -f "$file" ]; then
-        echo "'$file' is not a valid file"
-        return 1
-    fi
-    case "$file" in
-    *.tar.bz2 | *.tbz2) tar xjf "$file" ;;
-    *.tar.gz | *.tgz) tar xzf "$file" ;;
-    *.tar.xz | *.txz) tar xJf "$file" ;;
-    *.tar) tar xf "$file" ;;
-    *.bz2) bunzip2 "$file" ;;
-    *.gz) gunzip "$file" ;;
-    *.zip) unzip "$file" ;;
-    *.rar) unrar x "$file" ;;
-    *.7z) 7z x "$file" ;;
-    *.Z) uncompress "$file" ;;
-    *) echo "Cannot extract '$file': unsupported format" ;;
-    esac
+  if [ $# -eq 0 ]; then
+    echo "Usage: extract <archive_file>"
+    return 1
+  fi
+  local file="$1"
+  if [ ! -f "$file" ]; then
+    echo "'$file' is not a valid file"
+    return 1
+  fi
+  case "$file" in
+  *.tar.bz2 | *.tbz2) tar xjf "$file" ;;
+  *.tar.gz | *.tgz) tar xzf "$file" ;;
+  *.tar.xz | *.txz) tar xJf "$file" ;;
+  *.tar) tar xf "$file" ;;
+  *.bz2) bunzip2 "$file" ;;
+  *.gz) gunzip "$file" ;;
+  *.zip) unzip "$file" ;;
+  *.rar) unrar x "$file" ;;
+  *.7z) 7z x "$file" ;;
+  *.Z) uncompress "$file" ;;
+  *) echo "Cannot extract '$file': unsupported format" ;;
+  esac
 }
 
 # Create a new directory and enter it
 mkd() {
-    mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@"
 }
-
 
 # Get file size in human readable format
 filesize() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: filesize <file>"
-        return 1
-    fi
+  if [ $# -eq 0 ]; then
+    echo "Usage: filesize <file>"
+    return 1
+  fi
 
-    if [ -f "$1" ]; then
-        du -h "$1" | cut -f1
-    else
-        echo "File not found: $1"
-        return 1
-    fi
+  if [ -f "$1" ]; then
+    du -h "$1" | cut -f1
+  else
+    echo "File not found: $1"
+    return 1
+  fi
 }
 
 # Quick git commit with message
 commit() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: commit <message>"
-        return 1
-    fi
+  if [ $# -eq 0 ]; then
+    echo "Usage: commit <message>"
+    return 1
+  fi
 
-    git add . && git commit -m "$*"
+  git add . && git commit -m "$*"
 }
 
 # Show listening ports
 list_port() {
-    lsof -i -P -n | grep LISTEN
+  lsof -i -P -n | grep LISTEN
 }
 
 # Find and kill process by port
 kill_port() {
-    if [ $# -eq 0 ]; then
-        echo "Usage: kill_port <port>"
-        return 1
-    fi
+  if [ $# -eq 0 ]; then
+    echo "Usage: kill_port <port>"
+    return 1
+  fi
 
-    lsof -ti:$1 | xargs kill -9 2>/dev/null || echo "No process found on port $1"
+  lsof -ti:$1 | xargs kill -9 2>/dev/null || echo "No process found on port $1"
 }
 
 # Get external IP
 my_ip() {
-    curl -s ifconfig.me | tr -d '\n'
-    echo
+  curl -s ifconfig.me | tr -d '\n'
+  echo
 }
 
 # Pretty print JSON
 json_pp() {
-    if [ $# -eq 0 ]; then
-        # Read from stdin
-        python3 -m json.tool
-    elif [ -f "$1" ]; then
-        # Read from file
-        python3 -m json.tool "$1"
-    else
-        # Treat as JSON string
-        echo "$1" | python3 -m json.tool
-    fi
+  if [ $# -eq 0 ]; then
+    # Read from stdin
+    python3 -m json.tool
+  elif [ -f "$1" ]; then
+    # Read from file
+    python3 -m json.tool "$1"
+  else
+    # Treat as JSON string
+    echo "$1" | python3 -m json.tool
+  fi
 }
 
 # Clean DS_Store files recursively
 clean_ds_store() {
-    find "${1:-.}" -name ".DS_Store" -type f -delete
-    echo "Cleaned .DS_Store files"
+  find "${1:-.}" -name ".DS_Store" -type f -delete
+  echo "Cleaned .DS_Store files"
 }
 
 # Get directory size
 dir_size() {
-    du -sh "${1:-.}"
+  du -sh "${1:-.}"
 }

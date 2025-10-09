@@ -1,5 +1,3 @@
-
-
 # Performance monitoring (optional - comment out in production)
 # zmodload zsh/zprof  # Uncomment to enable profiling
 # To use: uncomment 'zprof' at the end of .zshrc to see startup performance
@@ -9,10 +7,13 @@ export DOTFILES=$HOME/.dotfiles
 
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM=$DOTFILES/shell
 ZSH_THEME="ultima"
 
 # Performance optimizations
-ZSH_DISABLE_COMPFIX=true
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_COMPFIX="true"
 
 # ZSH-NVM settings
 zstyle ':omz:plugins:nvm' lazy yes
@@ -48,14 +49,6 @@ export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=true
 
-# ZSH custom folder
-ZSH_CUSTOM=$DOTFILES/shell
-
-# Antidote manages plugins; prevent Oh My Zsh from loading any
-plugins=()
-
-source $ZSH/oh-my-zsh.sh
-
 # Load custom scripts
 [ -f $ZSH_CUSTOM/performance.zsh ] && source $ZSH_CUSTOM/performance.zsh
 [ -f $ZSH_CUSTOM/path.zsh ] && source $ZSH_CUSTOM/path.zsh
@@ -67,21 +60,25 @@ source $ZSH/oh-my-zsh.sh
 ssh-add -A 2>/dev/null
 
 # ZSH Autosuggestions
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste up-line-or-search down-line-or-search expand-or-complete accept-line push-line-or-edit)
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="(cd *|curl *)"
 
+# Initialize Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
 # Antidote (Zsh plugin manager via Homebrew)
 if type brew &>/dev/null; then
-	ANTIDOTE_BUNDLE_FILE="$DOTFILES/shell/zsh_plugins.txt"
-	ANTIDOTE_PREFIX=$(brew --prefix antidote)
-	if [ -f "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh" ]; then
-		source "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh"
-		# Load plugins from bundle file (order matters; syntax-highlighting last)
-		if [ -f "$ANTIDOTE_BUNDLE_FILE" ]; then
-			source <(antidote bundle < "$ANTIDOTE_BUNDLE_FILE")
-		fi
-	fi
+  ANTIDOTE_BUNDLE_FILE="$DOTFILES/shell/zsh_plugins.txt"
+  ANTIDOTE_PREFIX=$(brew --prefix antidote)
+  if [ -f "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh" ]; then
+    source "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh"
+    # Load plugins from bundle file (order matters; syntax-highlighting last)
+    if [ -f "$ANTIDOTE_BUNDLE_FILE" ]; then
+      source <(antidote bundle <"$ANTIDOTE_BUNDLE_FILE")
+    fi
+  fi
 fi
 
 # pyenv
@@ -95,7 +92,7 @@ export NODE_OPTIONS="--no-deprecation"
 
 # Ghostty integration
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
-	source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
 fi
 
 # Compilation flags
