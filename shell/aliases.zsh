@@ -93,9 +93,8 @@ alias shtop='sudo htop' # run htop with root rights
 alias cleanup='brew cleanup --prune=30 && brew autoremove && npm cache clean --force && yarn cache clean'
 # Lock the screen
 alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-alias empty_trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+# Empty the Trash on the main HDD. Also, clear Apple's System Logs to improve shell startup speed
+alias empty_trash="sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 # Flush Directory Service cache
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
