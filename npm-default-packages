@@ -2,3 +2,5 @@
 eslint
 turbo
 corepack
+yarn
+pnpm
