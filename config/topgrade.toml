@@ -25,6 +25,7 @@ disable = [
   "node",
   "yarn",
   "pnpm",
+  'gcloud',
   "git_repos",
   "composer",
   "vscode",
