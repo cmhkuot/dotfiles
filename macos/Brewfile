@@ -52,8 +52,6 @@ brew "openjdk"
 brew "openssh"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Fast, disk space efficient package manager
-brew "pnpm"
 # Python version management
 brew "pyenv"
 # Python interface to Tcl/Tk
@@ -66,8 +64,6 @@ brew "shfmt"
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# JavaScript package manager
-brew "yarn"
 # Utility improving 3rd party mouse performance and functionalities
 cask "bettermouse"
 # 3D creation suite
