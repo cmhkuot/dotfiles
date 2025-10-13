@@ -8,17 +8,17 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 print_status() {
-    echo -e "${GREEN}[INFO]${NC} $1"
+  echo -e "${GREEN}[INFO]${NC} $1"
 }
 
 print_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 print_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 print_step() {
-    echo -e "${BLUE}[STEP]${NC} $1"
+  echo -e "${BLUE}[STEP]${NC} $1"
 }

@@ -30,7 +30,11 @@ if [[ $reply =~ ^[Yy]$ ]]; then
     sudo -v
 
     # Keep sudo alive
-    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+    while true; do
+        sudo -n true
+        sleep 60
+        kill -0 "$$" || exit
+    done 2>/dev/null &
 
     if [ -f ~/.dotfiles/fresh.sh ]; then
         source ~/.dotfiles/fresh.sh

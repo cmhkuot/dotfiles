@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -e  # Exit on any error
-
+set -e # Exit on any error
 
 DOTFILES=$HOME/.dotfiles
 source $DOTFILES/bin/print.sh
@@ -124,7 +123,6 @@ if [ ! -d "$HOME/Code" ]; then
 else
     print_status "Code directory already exists"
 fi
-
 
 # Install all our dependencies with bundle (See Brewfile)
 print_step "Installing applications and dependencies..."

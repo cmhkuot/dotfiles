@@ -25,10 +25,11 @@ disable = [
   "node",
   "yarn",
   "pnpm",
+  'gcloud',
   "git_repos",
   "composer",
   "vscode",
-  "containers"
+  "containers",
 ]
 
 # Ignore failures for these steps
