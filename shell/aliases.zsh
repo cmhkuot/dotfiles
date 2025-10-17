@@ -99,13 +99,6 @@ alias empty_trash="sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.as
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # -------------------------------------------------
-# Better defaults
-# -------------------------------------------------
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-
-# -------------------------------------------------
 # Quick navigation
 # -------------------------------------------------
 alias ..='cd ..'
