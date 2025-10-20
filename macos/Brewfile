@@ -64,8 +64,6 @@ brew "shfmt"
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Utility improving 3rd party mouse performance and functionalities
-cask "bettermouse"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -97,6 +95,8 @@ cask "keyboardcleantool"
 cask "latest"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# Software for Logitech devices
+cask "logi-options+"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Provides updates to various Microsoft products
