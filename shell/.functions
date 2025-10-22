@@ -21,12 +21,12 @@ ssh_copy() {
     ((i++))
   done
   echo -n "Select key to copy [1-${#keys[@]}]: "
-  read -r idx
+  read idx
   if [[ ! "$idx" =~ ^[0-9]+$ ]] || [ "$idx" -lt 1 ] || [ "$idx" -gt ${#keys[@]} ]; then
     echo "Invalid selection."
     return 1
   fi
-  local selected_key="${keys[$((idx - 1))]}"
+  local selected_key="${keys[$idx]}"
   pbcopy <"$selected_key"
   echo "Copied: $(basename "$selected_key") to clipboard."
 }
