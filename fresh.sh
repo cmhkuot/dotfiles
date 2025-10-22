@@ -101,10 +101,11 @@ safe_symlink "$DOTFILES/shell/.zshrc" "$HOME/.zshrc"
 
 # Update git config
 git config --global init.defaultBranch main
-git config --global help.autoCorrect prompt
+git config --global pull.rebase false
 # git config --global branch.sort -committerdate
 git config --global fetch.prune true
 git config --global log.date iso
+git config --global help.autoCorrect prompt
 
 # Add global gitignore
 print_step "Setting up git configuration..."
