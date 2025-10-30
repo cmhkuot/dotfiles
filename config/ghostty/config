@@ -7,3 +7,5 @@ cursor-click-to-move = true
 mouse-hide-while-typing = true
 mouse-shift-capture = true
 shell-integration-features = true
+focus-follows-mouse = true
+desktop-notifications = true
