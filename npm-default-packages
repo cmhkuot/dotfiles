@@ -1,4 +1,5 @@
 @bitwarden/cli
+@adobe/aem-cli
 eslint
 turbo
 corepack
