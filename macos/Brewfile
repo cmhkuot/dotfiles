@@ -1,13 +1,14 @@
+tap "nicoverbruggen/cask"
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -24,7 +25,7 @@ brew "docker-compose"
 brew "duti"
 # Modern, maintained replacement for ls
 brew "eza"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Firebase command-line tools
 brew "firebase-cli"
@@ -34,6 +35,8 @@ brew "git"
 brew "glslang"
 # Improved top (interactive process viewer)
 brew "htop"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Mac App Store command-line interface
@@ -64,6 +67,8 @@ brew "shfmt"
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Command-line interface for WordPress
+brew "wp-cli"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -72,6 +77,8 @@ cask "brave-browser"
 cask "browserstacklocal"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Database version management tool
+cask "dbngin"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -119,8 +126,9 @@ cask "openkey"
 cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
+cask "nicoverbruggen/cask/phpmon"
 # Thumbnails, static previews, cover art and metadata for video files
-cask "qlvideo"
+cask "quicklook-video"
 # Control your tools with a few keystrokes
 cask "raycast"
 # MySQL/MariaDB database management
@@ -143,9 +151,5 @@ mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Folder Quick Look", id: 6753110395
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
 mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835

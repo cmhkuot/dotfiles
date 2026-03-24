@@ -24,7 +24,7 @@ path_add "/opt/homebrew/bin"
 path_add "/opt/homebrew/sbin"
 
 # Development tools
-path_add "$HOME/.composer/vendor/bin" # Composer global packages
+path_add "$HOME/.config/composer/vendor/bin" # Composer global packages
 path_add "$HOME/.node/bin"            # Node global binaries
 path_add "$HOME/.yarn/bin"            # Yarn global binaries
 
