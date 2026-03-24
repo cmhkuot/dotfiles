@@ -29,10 +29,10 @@ path_add "$HOME/.node/bin"            # Node global binaries
 path_add "$HOME/.yarn/bin"            # Yarn global binaries
 
 # Language specific tools
-path_add "/opt/homebrew/opt/openjdk/bin" # Java
+# path_add "/opt/homebrew/opt/openjdk/bin" # Java
 path_add "/opt/homebrew/opt/php/bin"     # PHP binaries
 path_add "/opt/homebrew/opt/php/sbin"    # PHP system binaries
-path_add "/usr/local/opt/openjdk/bin"    # Java (fallback location)
+# path_add "/usr/local/opt/openjdk/bin"    # Java (fallback location)
 
 # Framework specific
 path_add "$HOME/flutter/bin" # Flutter SDK

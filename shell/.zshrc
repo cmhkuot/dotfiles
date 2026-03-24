@@ -90,6 +90,10 @@ eval "$(pyenv init - zsh)"
 export NVM_SYMLINK_CURRENT=true
 export NODE_OPTIONS="--no-deprecation"
 
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # Ghostty integration
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
