@@ -1,5 +1,6 @@
 @bitwarden/cli
 @adobe/aem-cli
+@fission-ai/openspec@latest
 eslint
 turbo
 corepack
