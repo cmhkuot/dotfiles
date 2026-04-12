@@ -1,4 +1,3 @@
-tap "nicoverbruggen/cask"
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Official Amazon AWS command-line interface
@@ -37,10 +36,16 @@ brew "glslang"
 brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Manage your Java environment
+brew "jenv"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Mac App Store command-line interface
 brew "mas"
+# Development kit for the Java programming language
+brew "openjdk"
+# Java-based project management
+brew "maven"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -50,7 +55,7 @@ brew "nginx"
 # Libraries for security-enabled client and server applications
 brew "nss"
 # Development kit for the Java programming language
-brew "openjdk"
+brew "openjdk@21"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
 # Package compiler and linker metadata toolkit
@@ -67,8 +72,6 @@ brew "shfmt"
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# Command-line interface for WordPress
-brew "wp-cli"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -77,8 +80,6 @@ cask "brave-browser"
 cask "browserstacklocal"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# Database version management tool
-cask "dbngin"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -98,6 +99,8 @@ cask "jordanbaird-ice"
 cask "keka"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
+# Free and open-source media player
+cask "kodi"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Software for Logitech devices
@@ -120,13 +123,10 @@ cask "obsidian"
 cask "onedrive"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
-# Vietnamese input system
-cask "openkey"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
-cask "nicoverbruggen/cask/phpmon"
 # Thumbnails, static previews, cover art and metadata for video files
 cask "quicklook-video"
 # Control your tools with a few keystrokes
@@ -139,17 +139,24 @@ cask "shottr"
 cask "sourcetree"
 # Music streaming service
 cask "spotify"
+# Messaging app with a focus on speed and security
+cask "telegram"
 # Batch rename utility
 cask "transnomino"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
+# Vietnamese input method engine
+cask "xkey"
 # Multiplayer code editor
 cask "zed"
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Folder Quick Look", id: 6753110395
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
 mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835

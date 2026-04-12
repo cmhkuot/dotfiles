@@ -46,7 +46,7 @@ export LANG=en_US.UTF-8
 # Homebrew Bundle
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
-export HOMEBREW_BUNDLE_DUMP_DESCRIBE=true
+export HOMEBREW_BUNDLE_DESCRIBE=true
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=true
 
 # Load custom scripts
