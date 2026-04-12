@@ -102,5 +102,13 @@ fi
 # Compilation flags
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("$HOME/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
+
 # Performance monitoring (optional - comment out in production)
 # zprof # Uncomment to enable profiling
