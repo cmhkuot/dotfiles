@@ -103,12 +103,16 @@ fi
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # OPENSPEC:START
+export PATH="$(npm config get prefix)/bin:$PATH"
 # OpenSpec shell completions configuration
 fpath=("$HOME/.oh-my-zsh/custom/completions" $fpath)
 autoload -Uz compinit
 compinit
 # OPENSPEC:END
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/$HOME/.cache/lm-studio/bin"
+# End of LM Studio CLI section
 
 # Performance monitoring (optional - comment out in production)
 # zprof # Uncomment to enable profiling
