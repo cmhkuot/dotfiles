@@ -12,8 +12,9 @@ alias reload_shell="omz reload" # Reload Zsh configuration
 # -------------------------------------------------
 # To fix brew doctor's warning: "config scripts exist outside your system or Homebrew directories"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias brew_backup="brew bundle dump -f"
 alias brew_cleanup="brew cleanup --prune=30"
+alias brew_backup="brew bundle dump -f"
+alias brew_restore="brew bundle check || brew bundle install"
 
 # -------------------------------------------------
 # Python (via pyenv)
