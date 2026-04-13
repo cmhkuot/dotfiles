@@ -110,6 +110,9 @@ autoload -Uz compinit
 compinit
 # OPENSPEC:END
 
+# PHPMon
+export PATH=$HOME/bin:~/.config/phpmon/bin:$PATH
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/$HOME/.cache/lm-studio/bin"
 # End of LM Studio CLI section
