@@ -1,3 +1,6 @@
+tap "nicoverbruggen/cask"
+tap "shivammathur/extensions"
+tap "shivammathur/php"
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Official Amazon AWS command-line interface
@@ -72,6 +75,8 @@ brew "shfmt"
 brew "topgrade"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Command-line interface for WordPress
+brew "wp-cli"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -93,14 +98,14 @@ cask "gcloud-cli"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# Open source API development ecosystem
+cask "hoppscotch"
 # Menu bar manager
 cask "jordanbaird-ice"
 # File archiver
 cask "keka"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
-# Free and open-source media player
-cask "kodi"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Software for Logitech devices
@@ -127,12 +132,11 @@ cask "openinterminal"
 cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
+cask "nicoverbruggen/cask/phpmon"
 # Thumbnails, static previews, cover art and metadata for video files
 cask "quicklook-video"
 # Control your tools with a few keystrokes
 cask "raycast"
-# MySQL/MariaDB database management
-cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Graphical client for Git version control
@@ -149,8 +153,6 @@ cask "utm"
 cask "visual-studio-code"
 # Vietnamese input method engine
 cask "xkey"
-# Multiplayer code editor
-cask "zed"
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
