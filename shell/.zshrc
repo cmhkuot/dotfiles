@@ -114,6 +114,7 @@ compinit
 export PATH=$HOME/bin:~/.config/phpmon/bin:$PATH
 
 # Added by LM Studio CLI (lms)
+export PATH="$PATH:/$HOME/.lmstudio/bin"
 export PATH="$PATH:/$HOME/.cache/lm-studio/bin"
 # End of LM Studio CLI section
 
