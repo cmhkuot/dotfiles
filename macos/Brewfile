@@ -83,8 +83,6 @@ cask "blender"
 cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 # Collaborative team software
 cask "figma"
 # Web browser
