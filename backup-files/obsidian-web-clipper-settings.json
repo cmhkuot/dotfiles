@@ -2,64 +2,22 @@
   "general_settings": {
     "betaFeatures": false,
     "legacyMode": false,
+    "openBehavior": "reader",
     "saveBehavior": "addToObsidian",
     "showMoreActionsButton": false,
-    "silentOpen": false
+    "silentOpen": true
   },
   "highlighter_settings": {
     "alwaysShowHighlights": true,
-    "highlightBehavior": "replace-content",
+    "highlightBehavior": "highlight-inline",
     "highlighterEnabled": true
   },
   "interpreter_settings": {
-    "defaultPromptContext": "{{fullHtml|strip_tags:(\"script,h1,h2,h3,h4,h5,h6,meta,a,ol,ul,li,p,em,strong,i,b,img,video,audio,math,tablecite,strong,td,th,tr,caption,u\")|strip_attr:(\"alt,src,href,id,content,property,name,datetime,title\")}}",
+    "defaultPromptContext": "",
     "interpreterAutoRun": false,
     "interpreterEnabled": false,
-    "interpreterModel": "gpt-4o-mini",
-    "models": [
-      {
-        "baseUrl": "https://api.openai.com/v1/chat/completions",
-        "enabled": true,
-        "id": "gpt-4o-mini",
-        "name": "GPT-4o Mini",
-        "provider": "OpenAI"
-      },
-      {
-        "baseUrl": "https://api.openai.com/v1/chat/completions",
-        "enabled": true,
-        "id": "gpt-4o",
-        "name": "GPT-4o",
-        "provider": "OpenAI"
-      },
-      {
-        "baseUrl": "https://api.openai.com/v1/chat/completions",
-        "enabled": true,
-        "id": "gpt-o1-mini",
-        "name": "GPT-o1 Mini",
-        "provider": "OpenAI"
-      },
-      {
-        "baseUrl": "https://api.anthropic.com/v1/messages",
-        "enabled": true,
-        "id": "claude-3-5-sonnet-20240620",
-        "name": "Claude 3.5 Sonnet",
-        "provider": "Anthropic"
-      },
-      {
-        "baseUrl": "https://api.anthropic.com/v1/messages",
-        "enabled": true,
-        "id": "claude-3-haiku-20240307",
-        "name": "Claude 3 Haiku",
-        "provider": "Anthropic"
-      },
-      {
-        "baseUrl": "https://api.anthropic.com/v1/messages",
-        "enabled": true,
-        "id": "claude-3-opus-20240229",
-        "name": "Claude 3 Opus",
-        "provider": "Anthropic"
-      }
-    ],
+    "interpreterModel": "1778227793721",
+    "models": [],
     "providers": []
   },
   "migrationVersion": 1,
@@ -98,80 +56,82 @@
       "defaultValue": "clippings",
       "name": "tags",
       "type": "multitext"
+    },
+    {
+      "name": "summary",
+      "type": "text"
     }
   ],
   "reader_settings": {
-    "fontSize": 1.5,
+    "appearance": "auto",
+    "autoScroll": true,
+    "blendImages": true,
+    "colorLinks": false,
+    "customCss": "",
+    "darkTheme": "same",
+    "defaultFont": "",
+    "followLinks": true,
+    "fontSize": 9,
+    "fonts": [],
+    "highlightActiveLine": true,
+    "lightTheme": "default",
     "lineHeight": 1.6,
     "maxWidth": 38,
-    "theme": "default",
-    "themeMode": "auto"
+    "pinPlayer": true
   },
   "stats": {
-    "addToObsidian": 4,
+    "addToObsidian": 2,
     "copyToClipboard": 0,
     "saveFile": 0,
     "share": 0
   },
-  "template_1729834567473hgcb2e67o": {
-    "id": "1729834567473hgcb2e67o",
-    "name": "Document",
+  "template_17782273132635eitrni": {
+    "schemaVersion": "0.1.0",
+    "name": "Default",
     "behavior": "create",
-    "noteNameFormat": "{{title}}",
-    "path": "Documents",
-    "noteContentFormat": "{{content}}",
-    "context": "",
+    "noteNameFormat": "{{title|safe_name}}",
+    "path": "00_Inbox",
     "properties": [
       {
-        "id": "1729834567473xyfbkypsi",
-        "name": "title",
-        "value": "{{title}}",
-        "type": "text"
+        "id": "177822731326448kaexs",
+        "name": "author",
+        "value": "{{author}}",
+        "type": "multitext"
       },
       {
-        "id": "1729834567473rzkt4omdf",
+        "id": "1778227313264wos7oyg",
         "name": "description",
         "value": "{{description}}",
         "type": "text"
       },
       {
-        "id": "1729834567473038cspxrt",
-        "name": "author",
-        "value": "{{author|split:\\\", \\\"|wikilink|join}}",
+        "id": "1778227313264n2t4iiw",
+        "name": "tags",
+        "value": "inbox, web-clipper",
         "type": "multitext"
       },
       {
-        "id": "1729834567473o7t0darwz",
+        "id": "1778227313264l3y14r2",
         "name": "source",
         "value": "{{url}}",
         "type": "text"
       },
       {
-        "id": "1729834567473xdl48t3tn",
+        "id": "1778227313264rzq3xyg",
         "name": "published",
         "value": "{{published}}",
         "type": "date"
-      },
-      {
-        "id": "1729834567473pk75y775s",
-        "name": "created",
-        "value": "{{date}}",
-        "type": "date"
-      },
-      {
-        "id": "1729834567473u0zr8yyrl",
-        "name": "tags",
-        "value": "",
-        "type": "multitext"
       }
     ],
-    "triggers": [],
-    "vault": "My Vault"
+    "noteContentFormat": "{{content}}\n",
+    "id": "17782273132635eitrni",
+    "context": "",
+    "triggers": []
   },
   "template_list": [
-    "1729834567473hgcb2e67o"
+    "17782273132635eitrni"
   ],
   "vaults": [
-    "My Vault"
+    "second-brain"
   ]
 }
