@@ -7,8 +7,8 @@
 setopt NO_BEEP           # Don't beep on errors
 setopt AUTO_CD           # Change directory without typing cd
 setopt CDABLE_VARS       # Change directory to a path stored in a variable
-setopt CORRECT           # Try to correct the spelling of commands
-setopt CORRECT_ALL       # Try to correct the spelling of all arguments
+# setopt CORRECT           # Try to correct the spelling of commands
+# setopt CORRECT_ALL       # Try to correct the spelling of all arguments
 setopt AUTO_LIST         # Automatically list choices on ambiguous completion
 setopt AUTO_MENU         # Show completion menu on successive tab press
 setopt AUTO_PUSHD        # Push directories onto stack automatically
