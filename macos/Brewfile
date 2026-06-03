@@ -1,4 +1,5 @@
 tap "nicoverbruggen/cask"
+tap "pear-devs/pear"
 tap "shivammathur/extensions"
 tap "shivammathur/php"
 # Plugin manager for zsh, inspired by antigen and antibody
@@ -31,6 +32,8 @@ brew "eza"
 brew "ffmpeg"
 # Firebase command-line tools
 brew "firebase-cli"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # Distributed revision control system
 brew "git"
 # OpenGL and OpenGL ES reference compiler for shading languages
@@ -135,12 +138,12 @@ cask "nicoverbruggen/cask/phpmon"
 cask "quicklook-video"
 # Control your tools with a few keystrokes
 cask "raycast"
+# MySQL/MariaDB database management
+cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Graphical client for Git version control
 cask "sourcetree"
-# Music streaming service
-cask "spotify"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Batch rename utility
@@ -155,5 +158,7 @@ mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
 mas "Folder Quick Look", id: 6753110395
+mas "Okta Verify", id: 490179405
 mas "uBlock Origin Lite", id: 6745342698
+mas "Userscripts-Mac-App", id: 1463298887
 mas "Xcode", id: 497799835
