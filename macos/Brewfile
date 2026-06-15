@@ -1,13 +1,16 @@
-tap "nicoverbruggen/cask"
-tap "pear-devs/pear"
-tap "shivammathur/extensions"
-tap "shivammathur/php"
+tap "antoniorodr/memo", trusted: true
+tap "nicoverbruggen/cask", trusted: true
+tap "pear-devs/pear", trusted: true
+tap "shivammathur/extensions", trusted: true
+tap "shivammathur/php", trusted: true
+tap "steipete/tap", trusted: true
+tap "yakitrak/yakitrak", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Powerful, clean, object-oriented scripting language
-brew "ruby"
+brew "ruby", link: false
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # Image format providing lossless and lossy compression for web images
@@ -34,10 +37,14 @@ brew "ffmpeg"
 brew "firebase-cli"
 # Interact with Google Gemini AI models from the command-line
 brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # OpenGL and OpenGL ES reference compiler for shading languages
 brew "glslang"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in select formats
@@ -60,10 +67,16 @@ brew "neovim"
 brew "nginx"
 # Libraries for security-enabled client and server applications
 brew "nss"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# General-purpose speech recognition model
+brew "openai-whisper"
 # Development kit for the Java programming language
 brew "openjdk@21"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Python version management
@@ -80,12 +93,19 @@ brew "topgrade"
 brew "uv"
 # Command-line interface for WordPress
 brew "wp-cli"
+# CLI app to manage your Apple Notes and Apple reminders
+brew "antoniorodr/memo/memo"
+# Fast CLI for Apple Reminders
+brew "steipete/tap/remindctl"
+brew "yakitrak/yakitrak/obsidian-cli"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -109,8 +129,6 @@ cask "keka"
 cask "keyboardcleantool"
 # Discover, download, and run local LLMs
 cask "lm-studio"
-# Software for Logitech devices
-cask "logi-options+"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Provides updates to various Microsoft products
@@ -138,27 +156,31 @@ cask "nicoverbruggen/cask/phpmon"
 cask "quicklook-video"
 # Control your tools with a few keystrokes
 cask "raycast"
-# MySQL/MariaDB database management
-cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Graphical client for Git version control
 cask "sourcetree"
 # Messaging app with a focus on speed and security
 cask "telegram"
-# Batch rename utility
-cask "transnomino"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Vietnamese input method engine
 cask "xkey"
+mas "3D Splat App", id: 6760239941
 mas "Amphetamine", id: 937984704
-mas "Bitwarden", id: 1352778147
 mas "CotEditor", id: 1024640650
+mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
 mas "Okta Verify", id: 490179405
-mas "uBlock Origin Lite", id: 6745342698
-mas "Userscripts-Mac-App", id: 1463298887
 mas "Xcode", id: 497799835
+uv "nano-pdf"
+npm "@adobe/aem-cli"
+npm "@bitwarden/cli"
+npm "@fission-ai/openspec"
+npm "corepack"
+npm "eslint"
+npm "pnpm"
+npm "turbo"
+npm "yarn"
