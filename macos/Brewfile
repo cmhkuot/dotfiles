@@ -10,7 +10,7 @@ brew "antidote"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Powerful, clean, object-oriented scripting language
-brew "ruby", link: false
+brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # Image format providing lossless and lossy compression for web images
@@ -35,6 +35,8 @@ brew "eza"
 brew "ffmpeg"
 # Firebase command-line tools
 brew "firebase-cli"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -81,6 +83,10 @@ brew "pkgconf"
 brew "pyenv"
 # Python interface to Tcl/Tk
 brew "python-tk@3.13"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
 # Static http server anywhere you need one
 brew "serve"
 # Autoformat shell script source code
@@ -106,6 +112,10 @@ cask "blender"
 cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
 # Collaborative team software
@@ -174,7 +184,6 @@ cask "visual-studio-code"
 cask "xkey"
 # Multiplayer code editor
 cask "zed"
-mas "3D Splat App", id: 6760239941
 mas "Amphetamine", id: 937984704
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
