@@ -8,6 +8,14 @@ alias o="open ."
 alias reload_shell="omz reload" # Reload Zsh configuration
 
 # -------------------------------------------------
+# Quick navigation
+# -------------------------------------------------
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# -------------------------------------------------
 # Homebrew
 # -------------------------------------------------
 # To fix brew doctor's warning: "config scripts exist outside your system or Homebrew directories"
@@ -98,11 +106,3 @@ alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" u
 alias empty_trash="sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 # Flush Directory Service cache
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-
-# -------------------------------------------------
-# Quick navigation
-# -------------------------------------------------
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
