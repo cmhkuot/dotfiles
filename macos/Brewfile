@@ -1,4 +1,5 @@
 tap "antoniorodr/memo", trusted: true
+tap "edouard-claude/tap"
 tap "nicoverbruggen/cask", trusted: true
 tap "pear-devs/pear", trusted: true
 tap "shivammathur/extensions", trusted: true
@@ -7,6 +8,14 @@ tap "steipete/tap", trusted: true
 tap "yakitrak/yakitrak", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
+brew "readline"
+# Command-line interface for SQLite
+brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Powerful, clean, object-oriented scripting language
@@ -99,15 +108,17 @@ brew "topgrade"
 brew "uv"
 # Command-line interface for WordPress
 brew "wp-cli"
+# General-purpose lossless data-compression library
+brew "zlib"
 # CLI app to manage your Apple Notes and Apple reminders
-brew "antoniorodr/memo/memo"
+brew "antoniorodr/memo/memo", trusted: true
 # Fast CLI for Apple Reminders
-brew "steipete/tap/remindctl"
-brew "yakitrak/yakitrak/notesmd-cli", link: false
+brew "steipete/tap/remindctl", trusted: true
+brew "yakitrak/yakitrak/notesmd-cli", link: false, trusted: true
+# Android SDK component
+cask "android-platform-tools"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
-# Cross platform SQL editor and database management app
-cask "beekeeper-studio"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -115,7 +126,7 @@ cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
 # Terminal-based AI coding assistant
-cask "claude-code@latest"
+cask "claude-code"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Utilities designed to make common development tasks easier
@@ -139,8 +150,6 @@ cask "google-chrome"
 cask "hoppscotch"
 # File archiver
 cask "keka"
-# Blocks all Keyboard and TouchBar input
-cask "keyboardcleantool"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
@@ -174,8 +183,12 @@ cask "nicoverbruggen/cask/phpmon"
 cask "quicklook-video"
 # Control your tools with a few keystrokes
 cask "raycast"
+# MySQL/MariaDB database management
+cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# CLI proxy that reduces LLM token consumption by 60-90% by filtering shell output
+cask "edouard-claude/tap/snip", trusted: true
 # Graphical client for Git version control
 cask "sourcetree"
 # Menu bar manager
@@ -191,12 +204,16 @@ cask "zed"
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
+mas "HEIC Converter", id: 1294126402
 mas "Okta Verify", id: 490179405
+mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835
 uv "nano-pdf"
 npm "@adobe/aem-cli"
 npm "@bitwarden/cli"
+npm "@colbymchenry/codegraph"
 npm "@fission-ai/openspec"
+npm "@github/copilot"
 npm "corepack"
 npm "eslint"
 npm "pnpm"
