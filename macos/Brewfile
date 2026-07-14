@@ -61,6 +61,8 @@ brew "openjdk"
 brew "maven"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
+# Deep clean and optimize your Mac
+brew "mole"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
@@ -113,11 +115,13 @@ cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
 # Terminal-based AI coding assistant
-cask "claude-code"
+cask "claude-code@latest"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
+# Run Stable Diffusion locally
+cask "draw-things"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -161,6 +165,8 @@ cask "onedrive"
 cask "openinterminal"
 # Replacement for Docker Desktop
 cask "orbstack"
+# LLM server built on MLX
+cask "osaurus"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 cask "nicoverbruggen/cask/phpmon"
@@ -172,8 +178,6 @@ cask "raycast"
 cask "shottr"
 # Graphical client for Git version control
 cask "sourcetree"
-# Messaging app with a focus on speed and security
-cask "telegram"
 # Menu bar manager
 cask "thaw"
 # Virtual machines UI using QEMU
@@ -184,7 +188,6 @@ cask "visual-studio-code"
 cask "xkey"
 # Multiplayer code editor
 cask "zed"
-mas "Amphetamine", id: 937984704
 mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
