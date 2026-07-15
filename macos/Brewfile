@@ -1,5 +1,4 @@
 tap "antoniorodr/memo", trusted: true
-tap "edouard-claude/tap"
 tap "nicoverbruggen/cask", trusted: true
 tap "pear-devs/pear", trusted: true
 tap "shivammathur/extensions", trusted: true
@@ -111,10 +110,10 @@ brew "wp-cli"
 # General-purpose lossless data-compression library
 brew "zlib"
 # CLI app to manage your Apple Notes and Apple reminders
-brew "antoniorodr/memo/memo", trusted: true
+brew "antoniorodr/memo/memo"
 # Fast CLI for Apple Reminders
-brew "steipete/tap/remindctl", trusted: true
-brew "yakitrak/yakitrak/notesmd-cli", link: false, trusted: true
+brew "steipete/tap/remindctl"
+brew "yakitrak/yakitrak/notesmd-cli", link: false
 # Android SDK component
 cask "android-platform-tools"
 # Terminal interface for Antigravity agents
@@ -187,8 +186,6 @@ cask "raycast"
 cask "sequel-ace"
 # Screenshot measurement and annotation tool
 cask "shottr"
-# CLI proxy that reduces LLM token consumption by 60-90% by filtering shell output
-cask "edouard-claude/tap/snip", trusted: true
 # Graphical client for Git version control
 cask "sourcetree"
 # Menu bar manager
