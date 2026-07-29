@@ -113,7 +113,7 @@ brew "zlib"
 brew "antoniorodr/memo/memo"
 # Fast CLI for Apple Reminders
 brew "steipete/tap/remindctl"
-brew "yakitrak/yakitrak/notesmd-cli", link: false
+brew "yakitrak/yakitrak/notesmd-cli", trusted: true
 # Android SDK component
 cask "android-platform-tools"
 # Terminal interface for Antigravity agents
