@@ -77,6 +77,7 @@ alias npm_fresh="rm -rf node_modules/ package-lock.json && npm install"
 alias yarn_fresh="rm -rf node_modules/ package-lock.json yarn.lock && yarn install"
 alias url_encode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
 alias url_decode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias zprof_startup='ZSH_PROFILE_STARTUP=1 zsh -i -c exit'
 
 # -------------------------------------------------
 # Docker shortcuts
