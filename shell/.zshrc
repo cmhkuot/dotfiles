@@ -1,6 +1,7 @@
-# Performance monitoring (optional - comment out in production)
-# zmodload zsh/zprof  # Uncomment to enable profiling
-# To use: uncomment 'zprof' at the end of .zshrc to see startup performance
+# Performance monitoring (opt-in)
+if [[ -n "$ZSH_PROFILE_STARTUP" ]]; then
+  zmodload zsh/zprof
+fi
 
 # Path to your dotfiles
 export DOTFILES=$HOME/.dotfiles
@@ -53,10 +54,10 @@ export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=true
 [ -f $ZSH_CUSTOM/path.zsh ] && source $ZSH_CUSTOM/path.zsh
 [ -f $ZSH_CUSTOM/.functions ] && source $ZSH_CUSTOM/.functions
 [ -f $ZSH_CUSTOM/aliases.zsh ] && source $ZSH_CUSTOM/aliases.zsh
-[ -f $ZSH_CUSTOM/compinit.zsh ] && source $ZSH_CUSTOM/compinit.zsh
 
 # SSH keychain
-ssh-add -A 2>/dev/null
+# Avoid blocking shell startup if ssh-add asks for passphrase input.
+ssh-add -A </dev/null 2>/dev/null
 
 # ZSH Autosuggestions
 ZSH_AUTOSUGGEST_USE_ASYNC=1
@@ -67,15 +68,22 @@ ZSH_AUTOSUGGEST_HISTORY_IGNORE="(cd *|curl *)"
 # Initialize Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Completion tuning (styles only; compinit is handled by Oh My Zsh)
+[ -f $ZSH_CUSTOM/compinit.zsh ] && source $ZSH_CUSTOM/compinit.zsh
+
 # Antidote (Zsh plugin manager via Homebrew)
 if type brew &>/dev/null; then
   ANTIDOTE_BUNDLE_FILE="$DOTFILES/shell/zsh_plugins.txt"
+  ANTIDOTE_CACHE_FILE="$ZSH_CACHE_DIR/antidote_plugins.zsh"
   ANTIDOTE_PREFIX=$(brew --prefix antidote)
   if [ -f "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh" ]; then
     source "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh"
-    # Load plugins from bundle file (order matters; syntax-highlighting last)
+    # Build a cached plugin script and source it to keep startup deterministic.
     if [ -f "$ANTIDOTE_BUNDLE_FILE" ]; then
-      source <(antidote bundle <"$ANTIDOTE_BUNDLE_FILE")
+      if [[ ! -f "$ANTIDOTE_CACHE_FILE" || "$ANTIDOTE_BUNDLE_FILE" -nt "$ANTIDOTE_CACHE_FILE" ]]; then
+        antidote bundle <"$ANTIDOTE_BUNDLE_FILE" >| "$ANTIDOTE_CACHE_FILE" 2>/dev/null || true
+      fi
+      [ -f "$ANTIDOTE_CACHE_FILE" ] && source "$ANTIDOTE_CACHE_FILE"
     fi
   fi
 fi
@@ -83,7 +91,9 @@ fi
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init - zsh)"
+fi
 
 # Node/NVM
 export NVM_SYMLINK_CURRENT=true
@@ -91,7 +101,9 @@ export NODE_OPTIONS="--no-deprecation"
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if command -v jenv >/dev/null 2>&1; then
+  eval "$(jenv init -)"
+fi
 
 # Ghostty integration
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
@@ -102,11 +114,12 @@ fi
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # OPENSPEC:START
-export PATH="$(npm config get prefix)/bin:$PATH"
+if [[ -n "$ENABLE_NPM_PREFIX_ON_STARTUP" ]] && command -v npm >/dev/null 2>&1; then
+  NPM_PREFIX_DIR="$(npm config get prefix 2>/dev/null)"
+  [[ -n "$NPM_PREFIX_DIR" ]] && export PATH="$NPM_PREFIX_DIR/bin:$PATH"
+fi
 # OpenSpec shell completions configuration
 fpath=("$HOME/.oh-my-zsh/custom/completions" $fpath)
-autoload -Uz compinit
-compinit
 # OPENSPEC:END
 
 # PHPMon
@@ -117,5 +130,7 @@ export PATH="$PATH:/$HOME/.lmstudio/bin"
 export PATH="$PATH:/$HOME/.cache/lm-studio/bin"
 # End of LM Studio CLI section
 
-# Performance monitoring (optional - comment out in production)
-# zprof # Uncomment to enable profiling
+# Performance monitoring report (opt-in)
+if [[ -n "$ZSH_PROFILE_STARTUP" ]]; then
+  zprof
+fi

@@ -12,17 +12,8 @@
 # - '.' matches "regular files"
 # - 'mh+24' matches files (or directories) that are older than 24 hours
 
-# Load the completion system
-autoload -Uz compinit
-
-# Only rebuild compdump if it's older than 24 hours
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-  break
-done
-
-# Use cached completions (faster startup)
-compinit -C
+# Note: compinit is initialized by Oh My Zsh in this setup.
+# This file only applies completion styles/options.
 
 # Additional completion optimizations
 zstyle ':completion:*' use-cache on
