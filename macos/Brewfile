@@ -124,6 +124,8 @@ cask "blender"
 cask "brave-browser"
 # Test localhost and staging websites
 cask "browserstacklocal"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Brings the power of Copilot coding agent directly to your terminal
@@ -163,6 +165,8 @@ cask "microsoft-edge"
 cask "microsoft-teams"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Privacy-focused note taking app
+cask "notesnook"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -215,4 +219,5 @@ npm "corepack"
 npm "eslint"
 npm "pnpm"
 npm "turbo"
+npm "openclaw"
 npm "yarn"
