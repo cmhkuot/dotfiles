@@ -36,6 +36,9 @@ Temporary Items
 *~
 .*.sw?
 
+# Tools and IDEs
+.playwright-mcp
+
 # Note:
 # Keep global ignores limited to OS-generated or ephemeral editor files.
 # Project/language-specific patterns (node_modules, build outputs, env files,
