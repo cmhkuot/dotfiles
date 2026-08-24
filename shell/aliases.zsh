@@ -60,7 +60,6 @@ alias treel='eza --tree --level=2 -l'
 # Directories
 # -------------------------------------------------
 alias dotfiles="cd $DOTFILES"
-alias projects="cd $HOME/Code"
 alias library="cd $HOME/Library"
 
 # -------------------------------------------------
