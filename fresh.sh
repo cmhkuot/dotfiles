@@ -117,12 +117,12 @@ print_step "Updating Homebrew..."
 brew update || print_warning "Failed to update Homebrew"
 
 # Create a projects directory
-print_step "Creating Code directory..."
-if [ ! -d "$HOME/Code" ]; then
-    mkdir -p "$HOME/Code"
-    print_status "Created Code directory"
+print_step "Creating dev directory..."
+if [ ! -d "$HOME/dev" ]; then
+    mkdir -p "$HOME/dev"
+    print_status "Created dev directory"
 else
-    print_status "Code directory already exists"
+    print_status "dev directory already exists"
 fi
 
 # Install all our dependencies with bundle (See Brewfile)
