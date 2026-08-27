@@ -48,6 +48,7 @@ export LANG=en_US.UTF-8
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$DOTFILES/macos/Brewfile"
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=true
+export HOMEBREW_BUNDLE_DUMP_NO_NPM=true
 
 # Load custom scripts
 [ -f $ZSH_CUSTOM/performance.zsh ] && source $ZSH_CUSTOM/performance.zsh
@@ -129,6 +130,18 @@ export PATH=$HOME/bin:~/.config/phpmon/bin:$PATH
 export PATH="$PATH:/$HOME/.lmstudio/bin"
 export PATH="$PATH:/$HOME/.cache/lm-studio/bin"
 # End of LM Studio CLI section
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
 
 # Performance monitoring report (opt-in)
 if [[ -n "$ZSH_PROFILE_STARTUP" ]]; then

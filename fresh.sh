@@ -195,6 +195,7 @@ safe_symlink "$GHOSTTY_CONFIG_SOURCE" "$GHOSTTY_CONFIG_TARGET"
 
 # Set up Topgrade config symlink
 print_step "Setting up Topgrade config symlink..."
+mkdir -p "$HOME/.config"
 TOPGRADE_CONFIG_SOURCE="$DOTFILES/config/topgrade.toml"
 TOPGRADE_CONFIG_TARGET="$HOME/.config/topgrade.toml"
 safe_symlink "$TOPGRADE_CONFIG_SOURCE" "$TOPGRADE_CONFIG_TARGET"

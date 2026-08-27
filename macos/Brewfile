@@ -17,6 +17,8 @@ brew "sqlite"
 brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Dependency manager for Cocoa projects
@@ -39,6 +41,8 @@ brew "docker-compose"
 brew "duti"
 # Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Firebase command-line tools
@@ -55,6 +59,8 @@ brew "glslang"
 brew "go"
 # Improved top (interactive process viewer)
 brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Manage your Java environment
@@ -95,6 +101,8 @@ brew "pyenv"
 brew "python-tk@3.13"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
 # Static http server anywhere you need one
@@ -114,6 +122,8 @@ brew "antoniorodr/memo/memo"
 # Fast CLI for Apple Reminders
 brew "steipete/tap/remindctl"
 brew "yakitrak/yakitrak/notesmd-cli", trusted: true
+# DNG file converter
+cask "adobe-dng-converter"
 # Android SDK component
 cask "android-platform-tools"
 # Terminal interface for Antigravity agents
@@ -130,6 +140,8 @@ cask "chatgpt"
 cask "claude-code"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
+# Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
+cask "crisp"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
 # Run Stable Diffusion locally
@@ -151,6 +163,8 @@ cask "google-chrome"
 cask "hoppscotch"
 # File archiver
 cask "keka"
+# Blocks all Keyboard and TouchBar input
+cask "keyboardcleantool"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
@@ -163,10 +177,6 @@ cask "microsoft-auto-update"
 cask "microsoft-edge"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Tool to control external monitor brightness & volume
-cask "monitorcontrol"
-# Privacy-focused note taking app
-cask "notesnook"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -210,14 +220,3 @@ mas "Okta Verify", id: 490179405
 mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835
 uv "nano-pdf"
-npm "@adobe/aem-cli"
-npm "@bitwarden/cli"
-npm "@colbymchenry/codegraph"
-npm "@fission-ai/openspec"
-npm "@github/copilot"
-npm "corepack"
-npm "eslint"
-npm "pnpm"
-npm "turbo"
-npm "openclaw"
-npm "yarn"
