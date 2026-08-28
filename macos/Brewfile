@@ -128,6 +128,8 @@ cask "adobe-dng-converter"
 cask "android-platform-tools"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
+# Allows connection to a computer remotely
+cask "anydesk"
 # 3D creation suite
 cask "blender"
 # Web browser focusing on privacy
@@ -163,10 +165,14 @@ cask "hoppscotch"
 cask "keka"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
+# Companion app for Keychron Launcher's Quick Start feature
+cask "keychron-assistant"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Software for Logitech devices
+cask "logi-options+"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Provides updates to various Microsoft products
