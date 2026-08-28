@@ -2,3 +2,4 @@ shell/plugins
 .vscode
 shell/.zcompdump*
 config/open-webui/.env
+docs/superpowers/
