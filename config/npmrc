@@ -1,1 +1,9 @@
 allow-git=all
+# Pin installed versions exactly instead of "^x.y.z" ranges
+save-exact=true
+# Skip the funding message spam on every install
+fund=false
+# Only surface audit findings worth acting on, don't disable audit outright
+audit-level=high
+# Reuse the local cache when the registry is reachable but slow
+prefer-offline=true
