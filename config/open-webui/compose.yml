@@ -1,0 +1,20 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: always
+    ports:
+      - "${WEBUI_PORT:-3000}:8080"
+    # Lets the container reach Ollama running natively on macOS
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - .env
+    volumes:
+      - ${WEBUI_DATA_DIR:-${HOME}/.local/share/open-webui}:/app/backend/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 60s

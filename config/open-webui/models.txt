@@ -1,0 +1,6 @@
+qwen3.8:27b-mlx
+gemma4:26b-mlx
+# Small and fast - drives title generation via task.model.default
+qwen3.5:2b-mlx
+# Multilingual embeddings for RAG
+bge-m3

@@ -88,6 +88,23 @@ alias zprof_startup='ZSH_PROFILE_STARTUP=1 zsh -i -c exit'
 # alias dclean='docker system prune -af'
 
 # -------------------------------------------------
+# Local LLM (Ollama + Open WebUI)
+# -------------------------------------------------
+alias ollama_start="brew services start ollama"
+alias ollama_stop="brew services stop ollama"
+# Unload every model now instead of waiting out the 5m keep_alive
+alias ollama_free="ollama ps | tail -n +2 | cut -d' ' -f1 | xargs -I{} ollama stop {}"
+alias webui="docker compose -f $DOTFILES/config/open-webui/compose.yml"
+alias webui_start="orb start && webui up -d && open http://localhost:11435"
+alias webui_stop="webui down"
+alias webui_logs="webui logs -f"
+alias webui_update="webui pull && webui up -d"
+# Admin settings live in webui.db - sync them into the repo
+alias webui_config="$DOTFILES/bin/webui-config.sh"
+# Snapshot Open WebUI data (chats, accounts, RAG) - skips the model cache
+alias webui_backup="tar --exclude=cache -czf $HOME/open-webui-backup-\$(date +%Y%m%d).tar.gz -C $HOME/.local/share open-webui"
+
+# -------------------------------------------------
 # System monitoring
 # -------------------------------------------------
 alias meminfo='top -l 1 -s 0 | grep PhysMem'

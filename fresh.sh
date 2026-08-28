@@ -6,6 +6,10 @@ DOTFILES=$HOME/.dotfiles
 source $DOTFILES/bin/print.sh
 source $DOTFILES/bin/safe_symlink.sh
 
+# Manual actions collected during the run, printed together at the end so they
+# do not scroll away mid-install
+NEXT_STEPS=()
+
 echo "Setting up your Mac..."
 echo "====================="
 
@@ -200,6 +204,40 @@ TOPGRADE_CONFIG_SOURCE="$DOTFILES/config/topgrade.toml"
 TOPGRADE_CONFIG_TARGET="$HOME/.config/topgrade.toml"
 safe_symlink "$TOPGRADE_CONFIG_SOURCE" "$TOPGRADE_CONFIG_TARGET"
 
+# Set up local LLM stack (Ollama native + Open WebUI container)
+print_step "Setting up Ollama + Open WebUI..."
+WEBUI_DIR="$DOTFILES/config/open-webui"
+WEBUI_DATA_DIR="$HOME/.local/share/open-webui"
+
+if [ ! -f "$WEBUI_DIR/.env" ]; then
+    cp "$WEBUI_DIR/.env.example" "$WEBUI_DIR/.env"
+    # JWT signing key: losing it invalidates every session
+    secret=$(openssl rand -hex 32)
+    sed -i '' "s|^WEBUI_SECRET_KEY=.*|WEBUI_SECRET_KEY=$secret|" "$WEBUI_DIR/.env"
+    chmod 600 "$WEBUI_DIR/.env"
+    print_status "Generated $WEBUI_DIR/.env"
+else
+    print_status "Open WebUI .env already exists"
+fi
+
+mkdir -p "$WEBUI_DATA_DIR"
+
+if command -v ollama >/dev/null 2>&1; then
+    brew services start ollama || print_warning "Failed to start ollama service"
+else
+    print_warning "ollama not found, skipping"
+fi
+
+if command -v orb >/dev/null 2>&1; then
+    orb start || print_warning "Failed to start OrbStack"
+    docker compose -f "$WEBUI_DIR/compose.yml" up -d || print_warning "Failed to start Open WebUI"
+    print_status "Open WebUI available at http://localhost:11435"
+    NEXT_STEPS+=("Pull the local models: grep -v '^#' $WEBUI_DIR/models.txt | grep . | xargs -n1 ollama pull")
+    NEXT_STEPS+=("Restore Open WebUI admin settings: $DOTFILES/bin/webui-config.sh import")
+else
+    print_warning "OrbStack not found, skipping Open WebUI"
+fi
+
 # Set macOS preferences - we will run this last because this will reload the shell
 print_step "Setting macOS preferences..."
 if [ -f "$DOTFILES/macos/set-defaults.sh" ]; then
@@ -210,4 +248,11 @@ else
 fi
 
 print_status "Setup completed successfully! 🎉"
-print_status "Please restart your terminal to apply all changes."
+
+NEXT_STEPS+=("Restart your terminal to apply all changes")
+
+echo
+print_step "Manual steps left to finish:"
+for i in "${!NEXT_STEPS[@]}"; do
+    echo "  $((i + 1)). ${NEXT_STEPS[$i]}"
+done
