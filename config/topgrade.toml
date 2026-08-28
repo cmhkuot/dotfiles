@@ -39,7 +39,7 @@ disable = [
 autoremove = true
 
 # Upgrade casks that have auto-update enabled (e.g. Chrome, Brave)
-greedy_auto_updates = true
+greedy_auto_updates = false
 
 # Upgrade formulae built from the HEAD branch
 fetch_head = true
