@@ -84,7 +84,7 @@ brew "nginx"
 # Libraries for security-enabled client and server applications
 brew "nss"
 # Create, run, and share large language models (LLMs)
-brew "ollama"
+brew "ollama", restart_service: :changed
 # General-purpose speech recognition model
 brew "openai-whisper"
 # Development kit for the Java programming language
@@ -144,8 +144,6 @@ cask "copilot-cli"
 cask "crisp"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
-# Run Stable Diffusion locally
-cask "draw-things"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -173,8 +171,6 @@ cask "localsend"
 cask "macs-fan-control"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
-# Multi-platform web browser
-cask "microsoft-edge"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Simple application that will prevent iTunes or Apple Music from launching
@@ -187,8 +183,6 @@ cask "onedrive"
 cask "openinterminal"
 # Replacement for Docker Desktop
 cask "orbstack"
-# LLM server built on MLX
-cask "osaurus"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 cask "nicoverbruggen/cask/phpmon"
