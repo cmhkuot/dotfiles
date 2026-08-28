@@ -6,6 +6,14 @@ set -e
 
 source $HOME/.dotfiles/bin/print.sh
 
+if [ "$1" = "--dry-run" ]; then
+    if [ ! -f ~/.dotfiles/fresh.sh ]; then
+        print_error "fresh.sh not found!"
+        exit 1
+    fi
+    source ~/.dotfiles/fresh.sh --dry-run
+fi
+
 echo "Bootstrap terminal"
 echo "------------------"
 print_warning "This will reset your terminal configuration."
@@ -38,7 +46,6 @@ if [[ $reply =~ ^[Yy]$ ]]; then
 
     if [ -f ~/.dotfiles/fresh.sh ]; then
         source ~/.dotfiles/fresh.sh
-        print_status "Bootstrap completed successfully!"
     else
         print_error "fresh.sh not found!"
         exit 1
