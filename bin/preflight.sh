@@ -42,6 +42,9 @@ preflight() {
     "config/topgrade.toml"
     "config/open-webui/compose.yml"
     "config/open-webui/.env.example"
+    "config/npmrc"
+    "config/yarnrc.yml"
+    "config/htop/htoprc"
     "shell/.zshrc"
   )
   local missing_files=()

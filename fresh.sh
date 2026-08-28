@@ -107,6 +107,36 @@ step_git_config() {
   git config --global fetch.prune true
   git config --global log.date iso
   git config --global help.autoCorrect prompt
+  git config --global credential.helper osxkeychain
+  git config --global difftool.sourcetree.cmd 'opendiff "$LOCAL" "$REMOTE"'
+  git config --global mergetool.sourcetree.cmd '/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"'
+  git config --global mergetool.sourcetree.trustExitCode true
+}
+
+step_git_identity() {
+  if [ -n "$(git config --global user.name)" ] && [ -n "$(git config --global user.email)" ]; then
+    print_status "Git user.name/user.email already configured"
+    return
+  fi
+
+  read -p 'Git user.name: ' git_name
+  read -p 'Git user.email: ' git_email
+  git config --global user.name "$git_name"
+  git config --global user.email "$git_email"
+  print_status "Git identity set to $git_name <$git_email>"
+}
+
+step_npmrc() {
+  safe_symlink "$DOTFILES/config/npmrc" "$HOME/.npmrc"
+}
+
+step_yarnrc() {
+  safe_symlink "$DOTFILES/config/yarnrc.yml" "$HOME/.yarnrc.yml"
+}
+
+step_htop() {
+  mkdir -p "$HOME/.config/htop"
+  safe_symlink "$DOTFILES/config/htop/htoprc" "$HOME/.config/htop/htoprc"
 }
 
 step_gitignore() {
@@ -279,7 +309,11 @@ run_step "Zsh plugins" step_zsh_plugins
 run_step "Homebrew" step_homebrew
 run_step "Shell config symlink" step_shell_config
 run_step "Git config" step_git_config
+run_step "Git identity" step_git_identity
 run_step "Global gitignore" step_gitignore
+run_step "npm config symlink" step_npmrc
+run_step "Yarn config symlink" step_yarnrc
+run_step "htop config symlink" step_htop
 run_step "Homebrew update" step_brew_update
 run_step "Dev directory" step_dev_dir
 run_step "Brewfile + pyenv" step_brewfile
