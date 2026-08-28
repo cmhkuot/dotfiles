@@ -167,8 +167,6 @@ cask "keka"
 cask "keyboardcleantool"
 # Companion app for Keychron Launcher's Quick Start feature
 cask "keychron-assistant"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Software for Logitech devices
