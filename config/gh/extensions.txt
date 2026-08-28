@@ -1,0 +1,2 @@
+# One "owner/repo" per line, installed via `gh extension install <repo>`
+ai-ecoverse/gh-upskill

@@ -139,6 +139,40 @@ step_htop() {
   safe_symlink "$DOTFILES/config/htop/htoprc" "$HOME/.config/htop/htoprc"
 }
 
+step_copilot_config() {
+  mkdir -p "$HOME/.copilot"
+  safe_symlink "$DOTFILES/config/copilot/settings.json" "$HOME/.copilot/settings.json"
+  safe_symlink "$DOTFILES/config/copilot/permissions-config.json" "$HOME/.copilot/permissions-config.json"
+}
+
+step_gh_extensions() {
+  if ! command -v gh >/dev/null 2>&1; then
+    print_warning "gh not found, skipping extension install"
+    return
+  fi
+
+  local extensions_file="$DOTFILES/config/gh/extensions.txt"
+  if [ ! -f "$extensions_file" ]; then
+    print_warning "config/gh/extensions.txt not found"
+    return
+  fi
+
+  local failures=0
+  local repo
+  while IFS= read -r repo; do
+    [ -z "$repo" ] && continue
+    case "$repo" in \#*) continue ;; esac
+
+    if gh extension list 2>/dev/null | grep -q "$repo"; then
+      print_status "gh extension $repo already installed"
+    else
+      gh extension install "$repo" || { print_warning "Failed to install gh extension $repo"; failures=$((failures + 1)); }
+    fi
+  done <"$extensions_file"
+
+  [ "$failures" -eq 0 ]
+}
+
 step_gitignore() {
   safe_symlink "$DOTFILES/.gitignore.global" "$HOME/.gitignore.global"
   git config --global core.excludesfile "$HOME/.gitignore.global"
@@ -314,6 +348,8 @@ run_step "Global gitignore" step_gitignore
 run_step "npm config symlink" step_npmrc
 run_step "Yarn config symlink" step_yarnrc
 run_step "htop config symlink" step_htop
+run_step "Copilot CLI config symlink" step_copilot_config
+run_step "gh extensions" step_gh_extensions
 run_step "Homebrew update" step_brew_update
 run_step "Dev directory" step_dev_dir
 run_step "Brewfile + pyenv" step_brewfile

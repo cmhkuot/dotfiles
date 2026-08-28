@@ -1,0 +1,14 @@
+{
+  "locations": {
+    "/Users/hongson.do": {
+      "tool_approvals": [
+        {
+          "kind": "commands",
+          "commandIdentifiers": [
+            "rtk"
+          ]
+        }
+      ]
+    }
+  }
+}

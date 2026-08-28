@@ -45,6 +45,9 @@ preflight() {
     "config/npmrc"
     "config/yarnrc.yml"
     "config/htop/htoprc"
+    "config/copilot/settings.json"
+    "config/copilot/permissions-config.json"
+    "config/gh/extensions.txt"
     "shell/.zshrc"
   )
   local missing_files=()
