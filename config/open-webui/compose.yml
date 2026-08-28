@@ -4,7 +4,8 @@ services:
     container_name: open-webui
     restart: always
     ports:
-      - "${WEBUI_PORT:-3000}:8080"
+      # Loopback only - OrbStack publishes to the LAN by default
+      - "127.0.0.1:${WEBUI_PORT:-11435}:8080"
     # Lets the container reach Ollama running natively on macOS
     extra_hosts:
       - "host.docker.internal:host-gateway"
