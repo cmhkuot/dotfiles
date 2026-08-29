@@ -1,4 +1,5 @@
 tap "antoniorodr/memo", trusted: true
+tap "jithin-sabu/tap"
 tap "nicoverbruggen/cask", trusted: true
 tap "pear-devs/pear", trusted: true
 tap "shivammathur/extensions", trusted: true
@@ -190,6 +191,8 @@ cask "orbstack"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 cask "nicoverbruggen/cask/phpmon"
+# Free up your Mac safely by clearing cache and junk to the Trash
+cask "jithin-sabu/tap/purge", trusted: true
 # Thumbnails, static previews, cover art and metadata for video files
 cask "quicklook-video"
 # Control your tools with a few keystrokes
@@ -206,6 +209,8 @@ cask "thaw"
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Vietnamese input method engine
 cask "xkey"
 # Multiplayer code editor
