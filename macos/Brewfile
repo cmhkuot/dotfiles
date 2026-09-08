@@ -1,4 +1,5 @@
 tap "antoniorodr/memo", trusted: true
+tap "darrylmorley/whatcable"
 tap "jithin-sabu/tap"
 tap "nicoverbruggen/cask", trusted: true
 tap "pear-devs/pear", trusted: true
@@ -85,7 +86,7 @@ brew "nginx"
 # Libraries for security-enabled client and server applications
 brew "nss"
 # Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: :changed
+brew "ollama"
 # General-purpose speech recognition model
 brew "openai-whisper"
 # Development kit for the Java programming language
@@ -211,11 +212,13 @@ cask "utm"
 cask "visual-studio-code"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
+# Menu bar app for USB-C cable diagnostics
+cask "darrylmorley/whatcable/whatcable", trusted: true
 # Vietnamese input method engine
 cask "xkey"
 # Multiplayer code editor
 cask "zed"
-mas "CotEditor", id: 1024640650
+mas "CotEditor 2", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
 mas "HEIC Converter", id: 1294126402
