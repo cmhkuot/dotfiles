@@ -1,5 +1,28 @@
 #!/bin/bash
 
+# SSH key generator
+#
+# Usage:
+#   ./bin/ssh.sh [options]
+#
+# The script creates an SSH key pair when the requested private key does not
+# already exist. It pauses for confirmation before creating the key and checks
+# that ssh-keygen, ssh, and the generated public key are available.
+#
+# Options:
+#   -f, --file <file>         Output private key path (default: ~/.ssh/id_test)
+#   -k, --keysize <size>      Key size in bits (default: 4096)
+#   -t, --keytype <type>      Key type, usually ed25519 or rsa
+#                             (default: ed25519)
+#   -P, --passphrase <value>  Passphrase for the private key (default: empty)
+#
+# Examples:
+#   ./bin/ssh.sh
+#   ./bin/ssh.sh --file ~/.ssh/id_work --keytype ed25519
+#   ./bin/ssh.sh -f ~/.ssh/id_rsa -t rsa -k 4096 -P 'change-me'
+#
+# When the private key already exists, it is reused and no new key is created.
+
 # these are the defaults for the commandline-options
 FILENAME=~/.ssh/id_test
 KEYTYPE=ed25519

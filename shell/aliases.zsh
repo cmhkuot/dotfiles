@@ -36,6 +36,7 @@ alias pip="$(pyenv which pip)"
 alias gatekeeper="$DOTFILES/bin/gatekeeper.sh" # Gatekeeper helper
 alias ssh_config="code ~/.ssh/config"
 alias hostfile="sudo vi /etc/hosts"
+alias ssh_gen="$DOTFILES/bin/ssh.sh"
 
 # -------------------------------------------------
 # File listing (eza)
