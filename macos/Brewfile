@@ -159,8 +159,14 @@ cask "fork"
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Native client for GitHub Copilot
+cask "github-copilot-app"
 # Web browser
 cask "google-chrome"
+# Chromium-based web browser
+cask "helium-browser"
+# Homebrew's official GUI
+cask "homebrew-app"
 # Open source API development ecosystem
 cask "hoppscotch"
 # File archiver
@@ -218,7 +224,7 @@ cask "darrylmorley/whatcable/whatcable", trusted: true
 cask "xkey"
 # Multiplayer code editor
 cask "zed"
-mas "CotEditor 2", id: 1024640650
+mas "CotEditor", id: 1024640650
 mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
 mas "HEIC Converter", id: 1294126402
