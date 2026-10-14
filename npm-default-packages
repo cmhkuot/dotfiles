@@ -1,7 +1,8 @@
 @bitwarden/cli
 @adobe/aem-cli
 @colbymchenry/codegraph
-@fission-ai/openspec@latest
+@fission-ai/openspec
+@playwright/cli
 eslint
 turbo
 corepack
