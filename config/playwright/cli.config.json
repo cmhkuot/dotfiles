@@ -1,0 +1,27 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "isolated": true,
+    "launchOptions": {
+      "executablePath": "/Applications/Helium.app/Contents/MacOS/Helium",
+      "headless": true
+    },
+    "contextOptions": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "ignoreHTTPSErrors": false
+    }
+  },
+  "console": {
+    "level": "info"
+  },
+  "outputMode": "file",
+  "timeouts": {
+    "action": 5000,
+    "navigation": 60000
+  },
+  "allowUnrestrictedFileAccess": false
+}

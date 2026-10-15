@@ -47,6 +47,7 @@ preflight() {
     "config/htop/htoprc"
     "config/copilot/settings.json"
     "config/copilot/permissions-config.json"
+    "config/playwright/cli.config.json"
     "config/gh/extensions.txt"
     "shell/.zshrc"
   )

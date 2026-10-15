@@ -145,6 +145,24 @@ step_copilot_config() {
   safe_symlink "$DOTFILES/config/copilot/permissions-config.json" "$HOME/.copilot/permissions-config.json"
 }
 
+step_playwright_cli_config() {
+  local source="$DOTFILES/config/playwright/cli.config.json"
+  local target="$HOME/.playwright/cli.config.json"
+
+  mkdir -p "$HOME/.playwright" || return 1
+  safe_symlink "$source" "$target"
+
+  if [ ! -L "$target" ] || [ ! -e "$target" ]; then
+    print_error "Failed to create Playwright CLI config symlink: $target"
+    return 1
+  fi
+
+  if [ "$(readlink "$target")" != "$source" ]; then
+    print_error "Playwright CLI config symlink points to unexpected source: $target"
+    return 1
+  fi
+}
+
 step_gh_extensions() {
   if ! command -v gh >/dev/null 2>&1; then
     print_warning "gh not found, skipping extension install"
@@ -349,6 +367,7 @@ run_step "npm config symlink" step_npmrc
 run_step "Yarn config symlink" step_yarnrc
 run_step "htop config symlink" step_htop
 run_step "Copilot CLI config symlink" step_copilot_config
+run_step "Playwright CLI config symlink" step_playwright_cli_config
 run_step "gh extensions" step_gh_extensions
 run_step "Homebrew update" step_brew_update
 run_step "Dev directory" step_dev_dir
