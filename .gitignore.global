@@ -38,7 +38,9 @@ Temporary Items
 
 # Tools and IDEs
 .playwright-mcp
-.playwright-cli
+
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
 
 # Note:
 # Keep global ignores limited to OS-generated or ephemeral editor files.

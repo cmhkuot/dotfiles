@@ -2,7 +2,7 @@
 @adobe/aem-cli
 @colbymchenry/codegraph
 @fission-ai/openspec
-@playwright/cli
+@playwright/cli@latest
 eslint
 turbo
 corepack
