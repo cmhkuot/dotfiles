@@ -11,6 +11,8 @@ services:
       - "host.docker.internal:host-gateway"
     env_file:
       - .env
+    environment:
+      WEBUI_AUTH: "false"
     volumes:
       - ${WEBUI_DATA_DIR:-${HOME}/.local/share/open-webui}:/app/backend/data
     healthcheck:
