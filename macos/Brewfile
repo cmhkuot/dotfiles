@@ -9,8 +9,6 @@ tap "steipete/tap", trusted: true
 tap "yakitrak/yakitrak", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # Command-line interface for SQLite
@@ -19,6 +17,8 @@ brew "sqlite"
 brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Powerful, clean, object-oriented scripting language
@@ -124,18 +124,12 @@ brew "antoniorodr/memo/memo"
 # Fast CLI for Apple Reminders
 brew "steipete/tap/remindctl"
 brew "yakitrak/yakitrak/notesmd-cli", trusted: true
-# DNG file converter
-cask "adobe-dng-converter"
 # Android SDK component
 cask "android-platform-tools"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
-# Allows connection to a computer remotely
-cask "anydesk"
-# 3D creation suite
-cask "blender"
-# Web browser focusing on privacy
-cask "brave-browser"
+# Desktop password and login vault
+cask "bitwarden"
 # Test localhost and staging websites
 cask "browserstacklocal"
 # OpenAI's official ChatGPT desktop app
@@ -144,10 +138,6 @@ cask "chatgpt"
 cask "claude-code"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
-# Menu bar display manager: DDC brightness, HiDPI, presets, virtual displays
-cask "crisp"
-# Utilities designed to make common development tasks easier
-cask "devtoys"
 # Collaborative team software
 cask "figma"
 # Web browser
@@ -159,26 +149,16 @@ cask "fork"
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Native client for GitHub Copilot
-cask "github-copilot-app"
-# Web browser
-cask "google-chrome"
+# Native desktop AI assistant from Google
+cask "google-gemini"
 # Chromium-based web browser
 cask "helium-browser"
-# Homebrew's official GUI
-cask "homebrew-app"
 # Open source API development ecosystem
 cask "hoppscotch"
 # File archiver
 cask "keka"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
-# Companion app for Keychron Launcher's Quick Start feature
-cask "keychron-assistant"
-# Open-source cross-platform alternative to AirDrop
-cask "localsend"
-# Software for Logitech devices
-cask "logi-options+"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Provides updates to various Microsoft products
@@ -193,10 +173,10 @@ cask "obsidian"
 cask "onedrive"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
+# Android file transfer
+cask "openmtp"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Utility to uninstall apps and remove leftover files from old/uninstalled apps
-cask "pearcleaner"
 cask "nicoverbruggen/cask/phpmon"
 # Free up your Mac safely by clearing cache and junk to the Trash
 cask "jithin-sabu/tap/purge", trusted: true
@@ -210,8 +190,6 @@ cask "sequel-ace"
 cask "shottr"
 # Graphical client for Git version control
 cask "sourcetree"
-# Menu bar manager
-cask "thaw"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
@@ -224,11 +202,10 @@ cask "darrylmorley/whatcable/whatcable", trusted: true
 cask "xkey"
 # Multiplayer code editor
 cask "zed"
-mas "CotEditor", id: 1024640650
-mas "CrystalFetch", id: 6454431289
 mas "Folder Quick Look", id: 6753110395
-mas "HEIC Converter", id: 1294126402
+mas "Free Ruler", id: 1483172210
 mas "Okta Verify", id: 490179405
 mas "uBlock Origin Lite", id: 6745342698
 mas "Xcode", id: 497799835
+mas "Xiaomi Interconnectivity", id: 6673908449
 uv "nano-pdf"
