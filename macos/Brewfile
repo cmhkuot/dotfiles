@@ -83,6 +83,8 @@ brew "mole"
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
+# Retrieves currently playing media, and simulates media actions
+brew "nowplaying-cli"
 # Libraries for security-enabled client and server applications
 brew "nss"
 # Create, run, and share large language models (LLMs)
@@ -126,8 +128,6 @@ brew "steipete/tap/remindctl"
 brew "yakitrak/yakitrak/notesmd-cli", trusted: true
 # Android SDK component
 cask "android-platform-tools"
-# Terminal interface for Antigravity agents
-cask "antigravity-cli"
 # Desktop password and login vault
 cask "bitwarden"
 # Test localhost and staging websites
@@ -143,7 +143,7 @@ cask "figma"
 # Web browser
 cask "firefox"
 cask "font-jetbrains-mono"
-# GIT client
+# Git client
 cask "fork"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
@@ -198,8 +198,6 @@ cask "visual-studio-code"
 cask "vorssaint"
 # Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
-# Vietnamese input method engine
-cask "xkey"
 # Multiplayer code editor
 cask "zed"
 mas "Folder Quick Look", id: 6753110395
