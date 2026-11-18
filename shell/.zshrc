@@ -82,7 +82,8 @@ if type brew &>/dev/null; then
     source "$ANTIDOTE_PREFIX/share/antidote/antidote.zsh"
     # Build a cached plugin script and source it to keep startup deterministic.
     if [ -f "$ANTIDOTE_BUNDLE_FILE" ]; then
-      if [[ ! -f "$ANTIDOTE_CACHE_FILE" || "$ANTIDOTE_BUNDLE_FILE" -nt "$ANTIDOTE_CACHE_FILE" ]]; then
+      # Also rebuild when the clone dir was wiped (e.g. ~/Library/Caches cleanup), otherwise the cache sources missing files.
+      if [[ ! -f "$ANTIDOTE_CACHE_FILE" || "$ANTIDOTE_BUNDLE_FILE" -nt "$ANTIDOTE_CACHE_FILE" || ! -d "$(antidote home)/github.com" ]]; then
         antidote bundle <"$ANTIDOTE_BUNDLE_FILE" >| "$ANTIDOTE_CACHE_FILE" 2>/dev/null || true
       fi
       [ -f "$ANTIDOTE_CACHE_FILE" ] && source "$ANTIDOTE_CACHE_FILE"
